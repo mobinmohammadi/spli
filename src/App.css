@@ -1,0 +1,201 @@
+/* .swiper-button-prev{
+  width: 20px!important ;
+} */
+@font-face {
+  font-family: "yekan";
+  src: url("./assets/Fonts/Yekan.woff");
+}
+body {
+  box-sizing: border-box;
+  font-family: yekan;
+}
+.ss {
+  font-family: "yekan";
+  font-weight: bold;
+}
+
+.mt-10-custom {
+  margin-top: 10px;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.container-custom {
+  width: 98%;
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.breadcrumb-item {
+  position: relative;
+}
+
+.breadcrumb-item::before {
+  position: absolute;
+  transform: rotate(45deg);
+  content: "";
+  height: 77%;
+  top: -5px;
+  left: 0;
+  width: 4px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background: #f1f5f9;
+}
+.breadcrumb-item::after {
+  position: absolute;
+  margin-right: 5px;
+  transform: rotate(-45deg);
+  bottom: -5px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  content: "";
+  left: 0;
+  height: 77%;
+  width: 4px;
+  background: #f1f5f9;
+}
+
+.loader-searchs {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.loader-searchs {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  margin: auto;
+  background: #222b32;
+  border-radius: 50%;
+}
+.loader-searchs {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+  background: #de3500;
+  animation: crlMugLoader 1s linear infinite alternate;
+}
+
+.activeStyleSearchBox{
+  width: 100%;
+  transition: all 1s ease;
+}
+
+.transitions-Custom {
+  transition: all 0.5s ease;
+}
+
+.transitions-Custom-thow {
+  transition: all 0.3s ease;
+}
+
+.ShowSliderMoreOnOneProducts{
+  margin-top: 0;
+  opacity: 100;
+  visibility: visible;
+  transition: all 1s ease;
+}
+
+.h-2s{
+height: 30rem;
+}
+@keyframes crlMugLoader {
+  0%,
+  10% {
+    transform: translateY(64px);
+  }
+  90%,
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.item-products-details {
+  position: relative;
+}
+.show-Search__box {
+  top: 0;
+  transition: all 1s ease;
+}
+
+.item-products-details::before {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  right: 13px;
+  top: 30%;
+  border-radius: 100%;
+  background: red;
+}
+
+.abs {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.abs::before {
+  position: absolute;
+  content: "";
+  width: 3rem;
+  height: 100%;
+  background-color: #f1f5f9;
+  right: -15%;
+  opacity: 0.5;
+  border-radius: 100%;
+}
+
+.loader-addToBasket {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #FFF;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1.1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+
+.transionsImgCustoms {
+  transition: all 0.7s ease;
+}
+
+.mt-5-xutom{
+  margin-top: 12px;
+}
