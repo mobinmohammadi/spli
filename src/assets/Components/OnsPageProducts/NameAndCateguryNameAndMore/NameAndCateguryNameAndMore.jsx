@@ -12,7 +12,7 @@ export default function NameAndCateguryNameAndMore({
       <div className="w-full justify-between flex flex-col gap-4 ">
         <div className="">
           <div className="flex mt-5 pb-5 flex-col justify-between  & > *:text-xs gap-2 & > *:sm:max-w-full border-b-1 border-solid border-slate-200">
-            <div className="flex mt-5 pb-5 justify-between  & > *:text-xs gap-2 & > *:sm:max-w-full border-b-1 border-solid border-slate-200">
+            <div className="flex mt-5 pb-5 justify-between flex-col & > *:text-xs gap-2 & > *:sm:max-w-full border-b-1 border-solid border-slate-200">
               <div className="">
                 <span>نام محصول : </span>
                 <span className="text-red-500">

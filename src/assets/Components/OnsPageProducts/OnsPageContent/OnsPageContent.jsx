@@ -105,8 +105,8 @@ export default function OnsPageContent({
       />
       <div className="flex flex-col items-center & > *:w-full w-full sm:w-[70%] pr-4 pb-2 pl-2">
         <div className="flex flex-col gap-2 mt-5 sm:mt-0">
-          <span className="text-md ">{filtredOnsProducts[0].name}</span>
-          <div className="text-x p-4  sm:p-5 mb-5 mt-5 rounded-sm text-white tracking-wider flex items-center justify-center bg-slate-400">
+          <span className="text-md mt-5 mb-5 ">{filtredOnsProducts[0].name}</span>
+          <div className="text-x p-3  sm:p-5 rounded-sm text-white tracking-wider flex items-center justify-center bg-slate-400">
             <span className="text-sm text-center sm:text-sm font-bold"></span>
             <div className="text-x p-5 mb-5 mt-5 rounded-sm text-white tracking-wider flex items-center justify-center bg-slate-400">
               <span className="text-xs sm:text-sm font-bold">
@@ -115,7 +115,7 @@ export default function OnsPageContent({
             </div>
           </div>
           <div className="flex justify-around flex-col sm:flex-row">
-            <div className="flex justify-around">
+            <div className="flex justify-around flex-col sm:flex-row">
               <NameAndCateguryNameAndMore
                 subImg={subImg}
                 filtredOnsProducts={filtredOnsProducts}
