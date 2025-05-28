@@ -216,3 +216,17 @@ height: 30rem;
   display: flex;
 
 }
+
+
+.swiper-pagination-bullet-active{
+  width: 20px!important;
+  height: 5px!important;
+  border-radius: 0!important;
+}
+
+.swiper-pagination-bullet{
+    width: 20px!important;
+  height: 5px!important;
+  border-radius: 0!important;
+
+}

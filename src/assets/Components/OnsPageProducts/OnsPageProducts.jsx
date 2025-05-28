@@ -42,7 +42,7 @@ export default function OnsPageProducts() {
 
   useEffect(() => {
 
-    let sum = 0;
+    let sum = 0;  
     const allPriceInUserBaskets = arrayUserBasket.map(
       (products) => (sum += products.price)
     );

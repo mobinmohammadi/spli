@@ -4,17 +4,15 @@ import { papularSearchesInwebsite, preSellProducts } from "../../../Data.js";
 import TopSixSearchInWebsite from "../TopSixSearchInWebsite/TopSixSearchInWebsite";
 import BoxForResultSearches from "../BoxForResultSearches/BoxForResultSearches.jsx";
 import BoxesForUserBaskets from "./BoxesForUserBaskets/BoxesForUserBaskets.jsx";
-export default function TopBarMobile({ allPrices, arrayUserBasket  }) {
+export default function TopBarMobile({ allPrices, arrayUserBasket }) {
   const [arrayResultBeforSearch, setArrayResultBeforSearch] = useState([]);
-  const [allPrice , setAllPrice] = useState(null)
+  const [allPrice, setAllPrice] = useState(null);
   const [searchValue, setSearchValue] = useState("");
   const wrapperResultSearchs = useRef();
   const wrapperDetailsSearch = useRef();
   const btnOpenUserBasket = useRef();
   const modalUserBasket = useRef();
   const [isShowLayerModals, setIsShowLayerModals] = useState(false);
-
-  
 
   console.log(allPrices);
 
@@ -89,8 +87,6 @@ export default function TopBarMobile({ allPrices, arrayUserBasket  }) {
   };
 
   const showDetailsSearch = useRef();
-
-
 
   return (
     <div className=" border-b-4 block  border-solid border-sky-700 bg-white fixed w-full z-20 ">
@@ -219,9 +215,11 @@ export default function TopBarMobile({ allPrices, arrayUserBasket  }) {
             onClick={() => openModalUserbasket()}
             className="relative border-1 pt-1 pb-1 flex md:hidden pr-6 pl-2 mr-2 rounded-l-sm cursor-pointer bg-rose-600 text-white rounded-r-md"
           >
-            <div className="w-5 h-5 bg-zinc-700 transition-all rounded-full text-center flex justify-center items-center absolute -right-2 -top-3">
-              <span>{arrayUserBasket.length}</span>
-            </div>
+            {arrayUserBasket?.length ? (
+              <div className="w-5 h-5 bg-zinc-700 transition-all rounded-full text-center flex justify-center items-center absolute -right-2 -top-3">
+                <span>{arrayUserBasket?.length}</span>
+              </div>
+            ) : null}
             <svg className="w-5 h-5">
               <use href="#shopping-cart"></use>
             </svg>
@@ -246,25 +244,38 @@ export default function TopBarMobile({ allPrices, arrayUserBasket  }) {
             <div className="border-b border-solid border-zinc-600 pb-4">
               <span className="pr-2 text-xs">سبد خرید شما</span>
             </div>
-
-            <div className="mt-4 h-[500px] w-full overflow-y-auto">
-              {arrayUserBasket ? (
-
-                arrayUserBasket.map((item) => (
-                  <BoxesForUserBaskets {...item} />
-                ))
-              ): null}
-            </div>
+            {arrayUserBasket?.length ? (
+              <div className="mt-4 h-[500px] w-full overflow-y-auto">
+                {arrayUserBasket
+                  ? arrayUserBasket.map((item) => (
+                      <BoxesForUserBaskets {...item} />
+                    ))
+                  : null}
+              </div>
+            ) : (
+              <div className="flex items-center justify-center h-[70%]">
+                <img src="./../../gif/emptyBK.gif" alt="" />
+              </div>
+            )}
           </div>
-          <div className="w-[90%] m-auto flex flex-col">
-            <div className="flex justify-between pb-2">
-              <span className="font-bold text-md">قیمت کل : </span>
-              <span className="font-bold text-md">{allPrices.toLocaleString()} تومان</span>
+          {arrayUserBasket?.length ? (
+            <div className="w-[90%] m-auto flex flex-col">
+              <div className="flex justify-between pb-2">
+                <span className="font-bold text-md">قیمت کل : </span>
+
+                <span className="font-bold text-md">
+                  {allPrices.toLocaleString()} تومان
+                </span>
+              </div>
+              <div className=" bg-green-600 flex justify-center  rounded-sm & > *:cursor-pointer hover:bg-green-700 transition-all cursor-pointer p-3">
+                <button className="text-white ">تسویه حساب</button>
+              </div>
             </div>
-            <div className=" bg-green-600 flex justify-center  rounded-sm & > *:cursor-pointer hover:bg-green-700 transition-all cursor-pointer p-3">
-              <button className="text-white ">تسویه حساب</button>
+          ) : (
+            <div className="w-[90%] pt-2 pb-2 justify-center items-center rounded-md m-auto flex flex-col bg-slate-300">
+              <span>سبد خرید خالی است 🥱</span>
             </div>
-          </div>
+          )}
         </div>
       </div>
 

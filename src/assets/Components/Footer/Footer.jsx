@@ -4,8 +4,8 @@ export default function Footer() {
   return (
     <div className=" pt-5 rounded-tr-md rounded-tl-md">
       <div>
-        <div className="flex justify-between pt-5 pb-5 pr-5 pl-5 bg-white">
-          <div className="flex flex-col ">
+        <div className="flex justify-between sm:flex-row sm:gap-0 gap-5 flex-col items-center sm:items-start pt-5 pb-5 pr-5 pl-5 bg-white">
+          <div className="flex flex-col sm:text-right text-center sm:gap-2">
             <span className="text-sm font-bold text-slate-500">خبرنامه</span>
             <span className="text-xs text-slate-500">
               با عضویت در خبرنامه از آخرین تخفیف ها و جشنواره های ما مطلع شوید.
