@@ -15,7 +15,7 @@ const allProducts = [
       },
     ],
     categury: "creatin",
-    taste: []
+    taste: [],
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const allProducts = [
       },
     ],
     categury: "creatin",
-    taste: []
+    taste: [],
 
   },
   {
@@ -52,7 +52,7 @@ const allProducts = [
       },
     ],
     categury: "creatin",
-    taste: []
+    taste: [],
 
 
   },
@@ -80,7 +80,7 @@ const allProducts = [
       { id: 5, title: " کاکائو ", status: "1" },
       { id: 6, title: "   وانیلی", status: '0' },
       { id: 7, title: "  کیک هویج", status: '0' }
-    ]
+    ],
   },
   {
     id: 5,
@@ -99,7 +99,7 @@ const allProducts = [
         taste: []
       },
 
-    ]
+    ],
   },
   {
     id: 6,
@@ -120,7 +120,7 @@ const allProducts = [
       },
     ],
     categury: "creatin",
-    taste : []
+    taste : [],
 
 
   },
@@ -140,7 +140,7 @@ const allProducts = [
       },
     ],
     categury: "gainer",
-    taste : []
+    taste : [],
 
   },
   {
@@ -159,7 +159,7 @@ const allProducts = [
       },
     ],
     categury: "Growth hormone",
-    taste : []
+    taste : [],
 
   },
 ];
@@ -193,7 +193,8 @@ const preSellProducts = [
         img: "./../Images/Products/2-2.webp",
       },
     ],
-    taste : []
+    taste : [],
+    qty : 1
 
   },
   {
@@ -211,7 +212,8 @@ const preSellProducts = [
         img: "./../Images/Products/1-2.webp",
       },
     ],
-    taste : []
+    taste : [],
+    qty : 1
 
   },
   {
@@ -229,7 +231,9 @@ const preSellProducts = [
         img: "./../Images/Products/3-3.webp",
       },
     ],
-    taste : []
+    taste : [],
+    qty : 1
+
 
   },
   {
@@ -258,7 +262,9 @@ const preSellProducts = [
       { id: 4, title: "  بستنی وانیلی", status: '0' },
       { id: 5, title: " کارامل " },
       { id: 6, title: "  کیک هویج", status: '0' }
-    ]
+    ],
+    qty : 1
+
   },
   {
     id: 5,
@@ -276,7 +282,9 @@ const preSellProducts = [
       },
 
     ],
-    taste : []
+    taste : [],
+    qty : 1
+
 
   },
   {
@@ -293,7 +301,9 @@ const preSellProducts = [
         img: "./../Images/Products/8-3.webp",
       },
     ],
-    taste : []
+    taste : [],
+    qty : 1
+
 
   },
   {
@@ -311,7 +321,9 @@ const preSellProducts = [
         img: "./../Images/Products/10-2.webp",
       },
     ],
-    taste : []
+    taste : [],
+    qty : 1
+
 
   },
   {
@@ -329,7 +341,9 @@ const preSellProducts = [
         img: "./../Images/Products/12-2.webp",
       },
     ],
-    taste : []
+    taste : [],
+    qty : 1
+
 
   },
 ];

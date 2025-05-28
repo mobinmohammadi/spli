@@ -3,7 +3,8 @@ import InstagramStoriesModal from "../StoryFicher/StoryFicher";
 import { papularSearchesInwebsite, preSellProducts } from "../../../Data.js";
 import TopSixSearchInWebsite from "../TopSixSearchInWebsite/TopSixSearchInWebsite";
 import BoxForResultSearches from "../BoxForResultSearches/BoxForResultSearches.jsx";
-export default function TopBarMobile({arrayUserBasket}) {
+import BoxesForUserBaskets from "./BoxesForUserBaskets/BoxesForUserBaskets.jsx";
+export default function TopBarMobile({ arrayUserBasket }) {
   const [arrayResultBeforSearch, setArrayResultBeforSearch] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const wrapperResultSearchs = useRef();
@@ -12,10 +13,7 @@ export default function TopBarMobile({arrayUserBasket}) {
   const modalUserBasket = useRef();
   const [isShowLayerModals, setIsShowLayerModals] = useState(false);
 
-  const shopingCart = arrayUserBasket
-
-  console.log("arrayUserBasket ==>" , shopingCart);
-  
+  console.log(arrayUserBasket);
 
   const loaderSearch = useRef();
   const [isShowLayer, setIsShowLayer] = useState(false);
@@ -86,7 +84,7 @@ export default function TopBarMobile({arrayUserBasket}) {
       }
     }
   };
-  
+
   const showDetailsSearch = useRef();
   // const products = [
   //   {
@@ -259,27 +257,11 @@ export default function TopBarMobile({arrayUserBasket}) {
             <div className="border-b border-solid border-zinc-600 pb-4">
               <span className="pr-2 text-xs">سبد خرید شما</span>
             </div>
-              {
-                
-              }
-            <div className="mt-4">
-              {}
-              <div className="flex mt-3 gap-1 pr-2 border-b border-zinc-600 border-solid pb-3">
-                <img
-                  className="w-20 h-20 rounded-md"
-                  src="../../Images/cevinlevron/1.webp "
-                  alt=""
-                />
-                <div className="flex flex-col justify-between">
-                  <span className="text-sm">پروتعین وی کوین لوورون</span>
-                  <span className="text-xs ">3500000 تومان</span>
-                </div>
-                <div className="cursor-pointer flex hover:& > *:hover:text-red-600 justify-center items-center ">
-                  <svg className="w-5 h-5 text-zinc-700  transition-all">
-                    <use href="#trash"></use>
-                  </svg>
-                </div>
-              </div>
+
+            <div className="mt-4 h-[500px] overflow-y-auto">
+              {arrayUserBasket.map((item) => (
+                <BoxesForUserBaskets {...item} />
+              ))}
             </div>
           </div>
           <div className="w-[90%] m-auto flex flex-col">

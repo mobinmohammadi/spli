@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 
 export default function ShoppingCartDetailAndOtherSpecifications({ filtredOnsProducts, titleForBasket, setTitleForBasket }) {
     useEffect(() => {
-        console.log("titleForBasket ====> ", titleForBasket);
 
     }, [titleForBasket])
     return (

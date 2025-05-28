@@ -10,9 +10,39 @@ import { title } from 'framer-motion/client';
 
 export default function OnsPageProducts() {
   const [arrayUserBasket, setArrayUserBasket] = useState([])
+  let [idProducts, setIdProducts] = useState(null)
+
+  //  ==================== User Basket ============================
+const addProductsToBasket = (productID) => {
+  const foundProduct = allProducts.find(product => product.id == productID);
+
+  if (!foundProduct) return console.warn("Product not found:", productID);
+
+  setArrayUserBasket(prev => {
+    const exists = prev.find(item => item.id === productID);
+    
+    if (exists) {
+      return prev.map(item =>
+        item.id === productID
+          ? { ...item, qty: item.qty + 1 }
+          : item
+      );
+    } else {
+      // همیشه qty: 1 به صورت دستی ست بشه تا مطمئن باشیم درست کار می‌کنه
+      return [...prev, { ...foundProduct, qty: 1 }];
+    }
+  });
+};
+  
+  
+
+
+
+
+
+  // ==============================================================
 
   const pageID = useParams().ProductID
-  console.log(pageID.ProductID);
 
   // ====================== Found Categury Prodauct Name ===========
 
@@ -36,12 +66,11 @@ export default function OnsPageProducts() {
         titleBreadCrumb = "در حال توسعه"
       }
   }
-  console.log("titleBreadCrumb ========>" , titleBreadCrumb);
-  
-  console.log("nameBreadCrumb ===>" , nameBreadCrumb);
+
   
   
 
+  // ==============================================================
 
 
 
@@ -53,7 +82,7 @@ export default function OnsPageProducts() {
       <div className='relative top-[90px]'>
 
         <RoadMapSite name={nameBreadCrumb.name}  titleBreadCrumb={titleBreadCrumb} />
-        <OnsPageContent arrayUserBasket={arrayUserBasket} setArrayUserBasket={setArrayUserBasket} />
+        <OnsPageContent addProductsToBasket={addProductsToBasket} idProducts={idProducts} setIdProducts={setIdProducts} />
         <SliderProducts title="محصولات مرتبط" />
         <Footer />
       </div>

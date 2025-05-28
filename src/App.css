@@ -199,3 +199,13 @@ height: 30rem;
 .mt-5-xutom{
   margin-top: 12px;
 }
+
+.aftreLoadedOnsPageUserBasketBtn {
+  bottom: 0;
+  transition: all .5s ease;
+}
+
+.aftreLoadedOnsPageUserBasketBtnLast{
+  width: 100%;
+  transition: all 0.3 ease;
+}

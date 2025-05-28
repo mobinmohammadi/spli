@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function OnsPageSliderProduct({
+export default function  OnsPageSliderProduct({
   filtredOnsProducts,
   setIsShowSliderMoreOnOneProducts,
 }) {
