@@ -259,9 +259,12 @@ export default function TopBarMobile({ arrayUserBasket }) {
             </div>
 
             <div className="mt-4 h-[500px] overflow-y-auto">
-              {arrayUserBasket.map((item) => (
-                <BoxesForUserBaskets {...item} />
-              ))}
+              {arrayUserBasket ? (
+
+                arrayUserBasket.map((item) => (
+                  <BoxesForUserBaskets {...item} />
+                ))
+              ): null}
             </div>
           </div>
           <div className="w-[90%] m-auto flex flex-col">
