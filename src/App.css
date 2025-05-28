@@ -209,3 +209,10 @@ height: 30rem;
   width: 100%;
   transition: all 0.3 ease;
 }
+
+.openTheDeletModalUserBasket {
+  width: 120px;
+  transition: all 1.5s ease-out;
+  display: flex;
+
+}

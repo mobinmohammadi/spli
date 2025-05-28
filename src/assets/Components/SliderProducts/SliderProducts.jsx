@@ -13,7 +13,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { preSellProducts, RelatedProducts } from "../../../Data.js";
 
-export default function SliderProducts({ title }) {
+export default function SliderProducts({ addProductsToBasket, title }) {
   return (
     <div className="container-custom bg-red mb-10 bg-white p-5">
       <SectionsTitle title={title} />
@@ -29,7 +29,7 @@ export default function SliderProducts({ title }) {
         >
           {RelatedProducts.map((products) => (
             <SwiperSlide className="pb-14">
-              <BoxOnsPageItemsProducts products={products} />
+              <BoxOnsPageItemsProducts addProductsToBasket={addProductsToBasket} products={products} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -46,7 +46,7 @@ export default function SliderProducts({ title }) {
         >
           {RelatedProducts.map((products) => (
             <SwiperSlide className="pb-14 cursor-pointer">
-              <BoxOnsPageItemsProducts products={products} />
+              <BoxOnsPageItemsProducts addProductsToBasket={addProductsToBasket} products={products} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -63,7 +63,7 @@ export default function SliderProducts({ title }) {
         >
           {RelatedProducts.map((products) => (
             <SwiperSlide className="pb-14 cursor-pointer">
-              <BoxOnsPageItemsProducts products={products} />
+              <BoxOnsPageItemsProducts addProductsToBasket={addProductsToBasket} products={products} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -80,7 +80,7 @@ export default function SliderProducts({ title }) {
         >
           {preSellProducts.map((products) => (
             <SwiperSlide className="pb-14 cursor-pointer">
-              <BoxOnsPageItemsProducts products={products} />
+              <BoxOnsPageItemsProducts addProductsToBasket={addProductsToBasket} products={products} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -97,7 +97,7 @@ export default function SliderProducts({ title }) {
         >
           {preSellProducts.map((products) => (
             <SwiperSlide className="pb-14 cursor-pointer">
-              <BoxOnsPageItemsProducts products={products} />
+              <BoxOnsPageItemsProducts addProductsToBasket={addProductsToBasket} products={products} />
             </SwiperSlide>
           ))}
         </Swiper>

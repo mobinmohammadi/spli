@@ -9,6 +9,7 @@ import NameAndCateguryNameAndMore from "../NameAndCateguryNameAndMore/NameAndCat
 import ImagesAndSliderForProductsSinglePages from "../ImagesAndSliderForProductsSinglePages/ImagesAndSliderForProductsSinglePages";
 
 export default function OnsPageContent({
+  allPrcie,
   addProductsToBasket,
   idProducts,
   setIdProducts,
@@ -148,6 +149,7 @@ export default function OnsPageContent({
                   setIdToast={setIdToast}
                 />
                 <ShoppingCartDetailAndOtherSpecifications
+                addProductsToBasket={addProductsToBasket}
                   filtredOnsProducts={filtredOnsProducts}
                   titleForBasket={titleForBasket}
                   setTitleForBasket={setTitleForBasket}

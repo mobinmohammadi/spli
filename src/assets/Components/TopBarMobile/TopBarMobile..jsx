@@ -4,8 +4,9 @@ import { papularSearchesInwebsite, preSellProducts } from "../../../Data.js";
 import TopSixSearchInWebsite from "../TopSixSearchInWebsite/TopSixSearchInWebsite";
 import BoxForResultSearches from "../BoxForResultSearches/BoxForResultSearches.jsx";
 import BoxesForUserBaskets from "./BoxesForUserBaskets/BoxesForUserBaskets.jsx";
-export default function TopBarMobile({ arrayUserBasket }) {
+export default function TopBarMobile({ allPrices, arrayUserBasket  }) {
   const [arrayResultBeforSearch, setArrayResultBeforSearch] = useState([]);
+  const [allPrice , setAllPrice] = useState(null)
   const [searchValue, setSearchValue] = useState("");
   const wrapperResultSearchs = useRef();
   const wrapperDetailsSearch = useRef();
@@ -13,7 +14,9 @@ export default function TopBarMobile({ arrayUserBasket }) {
   const modalUserBasket = useRef();
   const [isShowLayerModals, setIsShowLayerModals] = useState(false);
 
-  console.log(arrayUserBasket);
+  
+
+  console.log(allPrices);
 
   const loaderSearch = useRef();
   const [isShowLayer, setIsShowLayer] = useState(false);
@@ -86,26 +89,9 @@ export default function TopBarMobile({ arrayUserBasket }) {
   };
 
   const showDetailsSearch = useRef();
-  // const products = [
-  //   {
-  //     id: 1,
-  //     : './s/Products/1.webp',
-  //     title: 'پولوشرت زیسا',
-  //     price: '۱۵۰,۰۰۰ تومان',
-  //   },
-  //   {
-  //     id: 2,
-  //     : './s/Products/2.webp',
-  //     title: 'تیشرت طرح جدید',
-  //     price: '۱۲۰,۰۰۰ تومان',
-  //   },
-  //   {
-  //     id: 3,
-  //     : './s/Products/3.webp',
-  //     title: 'هودی زمستانی',
-  //     price: '۲۲۰,۰۰۰ تومان',
-  //   },
-  // ];
+
+
+
   return (
     <div className=" border-b-4 block  border-solid border-sky-700 bg-white fixed w-full z-20 ">
       <div className="flex flex-col pt-2 pb-2">
@@ -231,8 +217,11 @@ export default function TopBarMobile({ arrayUserBasket }) {
           <div
             ref={btnOpenUserBasket}
             onClick={() => openModalUserbasket()}
-            className=" border-1 pt-1 pb-1 flex md:hidden pr-6 pl-2 mr-2 rounded-l-sm cursor-pointer bg-rose-600 text-white rounded-r-md"
+            className="relative border-1 pt-1 pb-1 flex md:hidden pr-6 pl-2 mr-2 rounded-l-sm cursor-pointer bg-rose-600 text-white rounded-r-md"
           >
+            <div className="w-5 h-5 bg-zinc-700 transition-all rounded-full text-center flex justify-center items-center absolute -right-2 -top-3">
+              <span>{arrayUserBasket.length}</span>
+            </div>
             <svg className="w-5 h-5">
               <use href="#shopping-cart"></use>
             </svg>
@@ -258,7 +247,7 @@ export default function TopBarMobile({ arrayUserBasket }) {
               <span className="pr-2 text-xs">سبد خرید شما</span>
             </div>
 
-            <div className="mt-4 h-[500px] overflow-y-auto">
+            <div className="mt-4 h-[500px] w-full overflow-y-auto">
               {arrayUserBasket ? (
 
                 arrayUserBasket.map((item) => (
@@ -270,7 +259,7 @@ export default function TopBarMobile({ arrayUserBasket }) {
           <div className="w-[90%] m-auto flex flex-col">
             <div className="flex justify-between pb-2">
               <span className="font-bold text-md">قیمت کل : </span>
-              <span className="font-bold text-md">3,500,000 تومان</span>
+              <span className="font-bold text-md">{allPrices.toLocaleString()} تومان</span>
             </div>
             <div className=" bg-green-600 flex justify-center  rounded-sm & > *:cursor-pointer hover:bg-green-700 transition-all cursor-pointer p-3">
               <button className="text-white ">تسویه حساب</button>

@@ -16,6 +16,7 @@ const allProducts = [
     ],
     categury: "creatin",
     taste: [],
+    // "qty" : 1
   },
   {
     id: 2,
@@ -141,6 +142,7 @@ const allProducts = [
     ],
     categury: "gainer",
     taste : [],
+    "qty" : 1
 
   },
   {
