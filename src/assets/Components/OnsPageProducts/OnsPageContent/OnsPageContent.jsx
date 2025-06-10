@@ -158,7 +158,7 @@ export default function OnsPageContent({
             </div>
           </div>
           <div
-            className={`container-custom ${
+            className={`container-custom mx-auto ${
               isShowPageShare
                 ? "opacity-100 visible transitions-all"
                 : "opacity-0 invisible h-10 overflow-hidden transitions-Custom"
@@ -173,7 +173,7 @@ export default function OnsPageContent({
               isShowSliderMoreOnOneProducts
                 ? "ShowSliderMoreOnOneProducts transition-all h-[100vh]"
                 : "h-[50vh] transition-all opacity-0 invisible transitions-Custom"
-            } fixed  bg-slate-300 top-0  w-full z-50`}
+            } fixed  bg-slate-300 top-0  w-full z-50 right-0`}
           >
             <OnsPageSliderProduct
               filtredOnsProducts={filtredOnsProducts[0]}
@@ -185,12 +185,12 @@ export default function OnsPageContent({
           {isShowPageShare ? (
             <div
               onClick={() => cancellActionsForShareProducts()}
-              className="bg-black/40 fixed top-0 w-full h-full z-30"
+              className="bg-black/40 fixed top-0 w-full h-full z-30 right-0"
             ></div>
           ) : null}
           <div
             ref={loaderOnPages}
-            className=" fixed w-full h-full bg-teal-900 top-0 z-50 flex items-center justify-center"
+            className=" fixed w-full h-full right-0 bg-teal-900 top-0 z-50 flex items-center justify-center"
           >
             <span className="loader w-60"></span>
           </div>

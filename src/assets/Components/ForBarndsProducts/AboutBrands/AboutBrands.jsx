@@ -12,7 +12,7 @@ export default function AboutBrands() {
   
   
   return (
-    <div className="w-50 rounded-t-md overflow-hidden bg-zinc-800 h-[100vh]">
+    <div className="w-58 sm:flex flex-col hidden rounded-t-md overflow-hidden bg-zinc-800  mt-20">
       <div className="h-20 relative bg-[#6216cd] flex justify-center">
         <img
         
@@ -22,10 +22,10 @@ export default function AboutBrands() {
         />
       </div>
       <div className="flex items-center justify-center flex-col  gap-5">
-        <span className="text-white text-xs max-w-24 text-center leading-5 mt-6 ">
+        <span className="text-white font-Dana-Bold text-xs max-w-24 text-center leading-5 mt-6 ">
           {brandTitleAbout[0].title}
         </span>
-        <span className="text-x pr-3 pl-3 text-white leading-5">
+        <span className="text-x pr-3 pl-3 font-Dana text-white leading-5">
           {brandTitleAbout[0].desc}
         </span>
       </div>

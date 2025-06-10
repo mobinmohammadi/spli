@@ -43,7 +43,7 @@ export default function BoxOnsPageItemsProducts({addProductsToBasket ,products})
   return (
     <div>
       <div className="max-w-48  flex flex-col props-center gap-2 ">
-        <img className="w-32 rounded-md" src={`../${products.img}`} alt="" />
+        <img className="w-28 rounded-md" src={`../${products.img}`} alt="" />
         <span onClick={() => goto()} className="max-w-[130px] text-right overflow-hidden max-h-[1.4em] text-xs inline-block text-[13px]">
           {products.name}
         </span >

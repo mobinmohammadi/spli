@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ShareProducts({cancellActionsForShareProducts}) {
     return (
-        <div className=' shadow-2xl w-[98%]  transition-all top-[25%]  flex flex-col z-40 gap-5 rounded-md pt-3 pb-3 pr-5 pl-5 mx-auto fixed bg-white'>
+        <div className=' shadow-2xl w-[90%] right-[5%]  transition-all top-[25%]  flex flex-col z-40 gap-5 rounded-md pt-3 pb-3 pr-5 pl-5 fixed bg-white'>
             <div className="flex justify-between items-center">
                 <span>اشتراک گذاری در شبکه های اجتماعی
                 </span>

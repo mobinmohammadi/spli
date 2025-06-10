@@ -19,7 +19,7 @@ export default function SliderProducts({ addProductsToBasket, title }) {
       <SectionsTitle title={title} />
       <div className="mt-5 x:hidden flex gap-8">
         <Swiper
-          slidesPerView={2}
+          slidesPerView={1}
           spaceBetween={30}
           pagination={{
             clickable: true,
