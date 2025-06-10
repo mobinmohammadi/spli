@@ -3,7 +3,7 @@ import React from "react";
 export default function BoxesProducts({ name, img, price }) {
   return (
     <div className="bg-slate-200 rounded-md pb-2 min-h-16 sm:min-h-24   flex flex-col gap-3">
-      <img className="w-[230px]" src={`../${img}`} alt="" />
+      <img className="w-[170px]" src={`../${img}`} alt="" />
       <div className="pr-2 pl-2 flex gap-5 flex-col ">
         <span className="font-bold sm:text-sm text-xs font-Dana">{name}</span>
         <div className="flex text-xs justify-between items-center">
