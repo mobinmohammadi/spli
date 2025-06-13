@@ -14,44 +14,35 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
   const modalUserBasket = useRef();
   const [isShowLayerModals, setIsShowLayerModals] = useState(false);
 
-  console.log(allPrices);
+  console.log(arrayResultBeforSearch);
 
   const loaderSearch = useRef();
   const [isShowLayer, setIsShowLayer] = useState(false);
 
   const openModalUserbasket = () => {
-    modalUserBasket.current.classList.add("left-0");
-    modalUserBasket.current.classList.add("style-modalOpen");
+    modalUserBasket.current.classList.add("left-0", "style-modalOpen");
     setIsShowLayerModals(true);
   };
   const closeModalUserBasket = () => {
     modalUserBasket.current.classList.remove("left-0");
-    modalUserBasket.current.classList.add("-left-80");
-    modalUserBasket.current.classList.add("style-modalOpen");
+    modalUserBasket.current.classList.add("-left-80", "style-modalOpen");
     setIsShowLayerModals(false);
   };
 
   const closeModals = () => {
     modalUserBasket.current.classList.remove("left-0");
-    modalUserBasket.current.classList.add("-left-80");
-    modalUserBasket.current.classList.add("style-modalOpen");
+    modalUserBasket.current.classList.add("-left-80", "style-modalOpen");
     setIsShowLayerModals(false);
   };
 
   const ShowSearchModals = () => {
-    showDetailsSearch.current.classList.remove("hidden");
-    showDetailsSearch.current.style.transition = "all 0.5s ease";
-    setTimeout(() => {
-      showDetailsSearch.current.style.top = "100%";
-    }, 1);
+    showDetailsSearch.current.classList.remove("hiddenSearchWrapper");
+    showDetailsSearch.current.classList.add("showSearchWrapper");
   };
   const notFoundItemSearchs = useRef();
   const closeModaleSearch = () => {
-    showDetailsSearch.current.style.top = "140%";
-    showDetailsSearch.current.style.transition = "all 0.5s ease-in-out";
-    setTimeout(() => {
-      showDetailsSearch.current.classList.add("hidden");
-    }, 120);
+    showDetailsSearch.current.classList.remove("showSearchWrapper");
+    showDetailsSearch.current.classList.add("hiddenSearchWrapper");
   };
 
   const serchingToProducts = (e) => {
@@ -86,10 +77,35 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
     }
   };
 
+  const lagikForSearchInput = () => {
+    if (searchValue.length >= 5 && !arrayResultBeforSearch.length) {
+      return (
+        <div
+          ref={notFoundItemSearchs}
+          className="hidden z-10 items-center justify-center bg-red-500 font-bold text-md text-white pt-2 pb-2 "
+        >
+          <span>موردی یافت نشد 😑</span>
+        </div>
+      );
+    } else if (searchValue.length >= 2 && searchValue.length <= 4) {
+      return (
+        <div
+          ref={notFoundItemSearchs}
+          className="hidden items-center justify-center bg-red-500 font-bold text-md text-white pt-2 pb-2 "
+        >
+          <span>مقدار وارد شده شما کمتر از 5 کاراکتر است 🤔</span>
+        </div>
+      );
+    }
+  };
+  useEffect(() => {
+    lagikForSearchInput();
+  }, [searchValue]);
+
   const showDetailsSearch = useRef();
 
   return (
-    <div className=" border-b-4 block  border-solid border-sky-700 bg-white fixed w-full z-20 ">
+    <div className=" border-b-4 block border-solid border-sky-700 bg-white fixed w-full z-20 ">
       <div className="flex flex-col pt-2 pb-2">
         <img className="" src="./s/offer.gif" alt="" />
 
@@ -123,26 +139,32 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
               </div>
               <div
                 ref={showDetailsSearch}
-                className="absolute pt2 pb-2 transition-all hidden shadow-2xl  rounded-b-md text-xs pt-2  bg-slate-100 text-zinc-700   rounded-md z-10  w-full top-[130%]"
+                className="absolute pt2 pb-2 transition-all hiddenSearchWrapper shadow-2xl  rounded-b-md text-xs pt-2  bg-slate-100 text-zinc-700   rounded-md z-10  w-full  top-[150%]"
               >
-                <div
-                  ref={notFoundItemSearchs}
-                  className="hidden items-center justify-center bg-red-500 font-bold text-md text-white pt-2 pb-2 "
-                >
-                  <span>موردی یافت نشد 😑</span>
-                </div>
+                {lagikForSearchInput()}
                 <div
                   ref={loaderSearch}
-                  className="w-full hidden absolute h-72  items-center justify-center bg-zinc-600"
+                  className="w-full flex-col gap-10 font-Morabba-Bold hidden absolute h-72  items-center justify-center bg-white"
                 >
                   <span class="loader"></span>
+                  <div className="text-center pl-5">
+                    در حال سرچ لطفا منتظر بمانید ....
+                  </div>
                 </div>
                 {arrayResultBeforSearch.length ? (
-                  arrayResultBeforSearch.map((item) => (
-                    <div className="pt-2 pb-2">
-                      <BoxForResultSearches {...item} />
+                  <div className="">
+                    <div className="border-slate-400 w-full r-5 border-b-2 border-solid p-2">
+                      <span className=" font-Dana-Bold flex gap-1 text-x sm:text-sm">
+                        <span className="text-green-600 ">{arrayResultBeforSearch.length}</span>
+                        <span className="text-gray-700">مورد یافت شد </span>
+                      </span>
                     </div>
-                  ))
+                    {arrayResultBeforSearch.map((item) => (
+                      <div className="pt-2 pb-2">
+                        <BoxForResultSearches {...item} />
+                      </div>
+                    ))}
+                  </div>
                 ) : (
                   <div
                     ref={wrapperDetailsSearch}

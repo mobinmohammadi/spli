@@ -37,8 +37,6 @@ export default function SliderPreeSellProducts() {
         >
           {preSellProducts.map((products) => (
             <SwiperSlide className="pb-14">
-              {console.log(products)
-              }
               <ItemSliderPreeSell
                 addToUserBasket={addToUserBasket}
                 items={products}
