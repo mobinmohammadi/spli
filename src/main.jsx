@@ -5,6 +5,7 @@ import Home from './Pages/Home/Home.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import OnsPageProducts from './assets/Components/OnsPageProducts/OnsPageProducts.jsx'
 import FilterBrands from './Pages/Home/FilterBrands/FilterBrands.jsx'
+import CategurtByProducts from './Pages/Home/CategurtByProducts/CategurtByProducts.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -12,6 +13,7 @@ createRoot(document.getElementById('root')).render(
     <Route path="/" element={<Home/>} />
     <Route path="/onspageproduct/:ProductID" element={<OnsPageProducts/>} />
     <Route path="/productsBrand/:BrandName" element={<FilterBrands/>} />
+    <Route path="/categuryByProducts/:categuryProduct" element={<CategurtByProducts/>} />
   </Routes>
 </BrowserRouter>
 )

@@ -167,16 +167,16 @@ const allProducts = [
 ];
 
 const allCategury = [
-  { id: 1, name: "پروتئین وی", img: "./Images/Categury/1.webp" },
-  { id: 2, name: "آمینواسید ها", img: "./Images/Categury/5.webp" },
-  { id: 3, name: "گینر", img: "./Images/Categury/3.webp" },
-  { id: 4, name: "کربو مس ", img: "./Images/Categury/4.webp" },
-  { id: 5, name: "کراتین", img: "./Images/Categury/6.webp" },
-  { id: 6, name: "تست بوستر", img: "./Images/Categury/11.webp" },
-  { id: 7, name: "گلوتامین", img: "./Images/Categury/8.webp" },
-  { id: 8, name: "مولتی ویتامین", img: "./Images/Categury/12.webp" },
-  { id: 9, name: "بی سی ای ای", img: "./Images/Categury/2.png" },
-  { id: 10, name: "پروتئین وی ", img: "./Images/Categury/1.webp" },
+  { id: 1, name: "پروتئین وی", img: "./Images/Categury/1.webp" , link : "/categuryByProducts/protein"},
+  { id: 2, name: "آمینواسید ها", img: "./Images/Categury/5.webp" , link : "/categuryByProducts/amino"},
+  { id: 3, name: "گینر", img: "./Images/Categury/3.webp" , link : "/categuryByProducts/gainer"},
+  { id: 4, name: "کربو مس ", img: "./Images/Categury/4.webp" , link : "/categuryByProducts/carbomas"},
+  { id: 5, name: "کراتین", img: "./Images/Categury/6.webp" , link : "/categuryByProducts/ceratin"},
+  { id: 6, name: "تست بوستر", img: "./Images/Categury/11.webp" , link : "/categuryByProducts/testboaster"},
+  { id: 7, name: "گلوتامین", img: "./Images/Categury/8.webp" , link : "/categuryByProducts/glotamin"},
+  { id: 8, name: "مولتی ویتامین", img: "./Images/Categury/12.webp" , link : "/categuryByProducts/moltivitamin"},
+  { id: 9, name: "بی سی ای ای", img: "./Images/Categury/2.png" , link : "/categuryByProducts/bcaa"},
+  { id: 10, name: "پروتئین وی ", img: "./Images/Categury/1.webp" , link : "/categuryByProducts/protein"},
 ];
 
 const preSellProducts = [
