@@ -64,6 +64,12 @@
   .loader::after {
     animation-delay: 1s;
   }
+
+  .y-scroll-no-scrollbar {
+  overflow-y: auto; /* یا scroll */
+  scrollbar-width: none; /* برای فایرفاکس */
+  -ms-overflow-style: none; /* برای اینترنت اکسپلورر */
+}
   
   @keyframes animloader {
     0% {

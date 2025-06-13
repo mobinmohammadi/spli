@@ -5,6 +5,7 @@ export default function MenuMobile() {
   const [isShowSearchBox, setIsShowSearchBox] = useState(false);
   const cancelActions = () => {
     setIsShowSearchBox(false)
+    
   }
   return (
     <div className="w-full & > *:cursor-pointer pb-2 flex justify-between fixed bottom-0 z-10 rounded-t-xl bg-zinc-700 text-white pt-2 pr-2 r pl-2">
@@ -22,7 +23,7 @@ export default function MenuMobile() {
           <use href="#search-normal"></use>
         </svg>
         <span>جستوجو</span>
-        <ShowWrapperSearch  cancelActions={cancelActions} isShowSearchBox={isShowSearchBox} />
+        <ShowWrapperSearch setIsShowSearchBox={setIsShowSearchBox} cancelActions={cancelActions} isShowSearchBox={isShowSearchBox} />
       </div>
       <div className="flex flex-col max-w-24 gap-1 items-center">
         <svg className="w-5 h-5 text-white">

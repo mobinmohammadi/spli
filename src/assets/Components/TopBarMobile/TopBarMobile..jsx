@@ -36,13 +36,13 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
   };
 
   const ShowSearchModals = () => {
-    showDetailsSearch.current.classList.remove("hiddenSearchWrapper");
+    showDetailsSearch.current.classList.remove("hiddenSearchWrapper" , "invisible");
     showDetailsSearch.current.classList.add("showSearchWrapper");
   };
   const notFoundItemSearchs = useRef();
   const closeModaleSearch = () => {
     showDetailsSearch.current.classList.remove("showSearchWrapper");
-    showDetailsSearch.current.classList.add("hiddenSearchWrapper");
+    showDetailsSearch.current.classList.add("hiddenSearchWrapper" , "invisible");
   };
 
   const serchingToProducts = (e) => {
@@ -139,7 +139,7 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
               </div>
               <div
                 ref={showDetailsSearch}
-                className="absolute pt2 pb-2 transition-all hiddenSearchWrapper shadow-2xl  rounded-b-md text-xs pt-2  bg-slate-100 text-zinc-700   rounded-md z-10  w-full  top-[150%]"
+                className="absolute pt2 pb-2 transition-all hiddenSearchWrapper invisible shadow-2xl  rounded-b-md text-xs pt-2  bg-slate-100 text-zinc-700   rounded-md z-10  w-full  top-[150%]"
               >
                 {lagikForSearchInput()}
                 <div
