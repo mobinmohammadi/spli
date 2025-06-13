@@ -21,7 +21,7 @@ export default function Home() {
       <Slider />
 
       <WrapperCateguryItem />
-      <div className="container-custom  pt-10 pr-5 pl-5 sm:pr-0 sm:pl-0 flex flex-col gap-10 pb-10 mt-10-custom">
+      <div className="container-custom  pt-10  sm:pr-0 sm:pl-0 flex flex-col gap-10 pb-10 mt-10-custom">
         <SectionsPreeSellProducts setArrayUserBaskets={setArrayUserBaskets} />
         <div className="">
           <DiscriptionHome />
