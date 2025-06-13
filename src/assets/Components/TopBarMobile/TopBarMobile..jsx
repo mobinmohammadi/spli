@@ -128,7 +128,7 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
                 onChange={(e) => serchingToProducts(e.target.value)}
                 value={searchValue}
                 type="text"
-                className="w-full pl-10 text-x sm:text-xs font-Dana  outline-0 "
+                className="w-full pl-10 pr-2 text-x sm:text-xs font-Dana  outline-0 "
                 placeholder="در بین هزاران محصول ما سرچ بزنید ..."
               />
 
