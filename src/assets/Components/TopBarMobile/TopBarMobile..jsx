@@ -110,7 +110,7 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
         <img className="" src="./s/offer.gif" alt="" />
 
         <div className="pst  bg-white   pl-5  flex  items-center justify-between">
-          <div className="flex z-10 w-full items-center  justify-between md:w-[50%] items-right md:justify-right  ">
+          <div className="flex z-10 w-full items-center  sm:justify-between md:w-[50%] items-right md:justify-right  ">
             <img
               className="w-15"
               src="https://www.svgrepo.com/show/489305/gym.svg"
@@ -118,7 +118,7 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
             />
             <div
               ref={wrapperResultSearchs}
-              className="bg-slate-100 md:w-[24rem] relative h-7 md:h-10 flex item-center justify-center rounded-md"
+              className="bg-slate-100 md:w-[24rem] w-full relative h-7 md:h-10 flex item-center justify-center rounded-md"
             >
               <input
                 onClick={() => {
@@ -128,7 +128,7 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
                 onChange={(e) => serchingToProducts(e.target.value)}
                 value={searchValue}
                 type="text"
-                className="w-[90%] pl-10 text-xs font-Dana  outline-0 "
+                className="w-full pl-10 text-x sm:text-xs font-Dana  outline-0 "
                 placeholder="در بین هزاران محصول ما سرچ بزنید ..."
               />
 
