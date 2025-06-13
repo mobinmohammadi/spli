@@ -7,6 +7,7 @@ import SliderProducts from "../SliderProducts/SliderProducts";
 import Footer from "../Footer/Footer";
 import { allProducts } from "../../../Data";
 import { title } from "framer-motion/client";
+import MyParallaxSwiper from "../SwiperSlide/SwiperSlide";
 
 export default function OnsPageProducts() {
   const [arrayUserBasket, setArrayUserBasket] = useState([]);

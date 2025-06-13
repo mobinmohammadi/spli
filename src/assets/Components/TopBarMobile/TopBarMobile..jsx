@@ -112,8 +112,8 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
                 onChange={(e) => serchingToProducts(e.target.value)}
                 value={searchValue}
                 type="text"
-                className="w-[90%] pl-10 text-sm  outline-0 pr-2"
-                placeholder="جستوجو ..."
+                className="w-[90%] pl-10 text-xs font-Dana  outline-0 "
+                placeholder="در بین هزاران محصول ما سرچ بزنید ..."
               />
 
               <div className="absolute pr-2  pl-2 bg-red-500 flex items-center   text-white h-full left-0 rounded-tl-md rounded-bl-md cursor-pointer">
@@ -165,33 +165,20 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
             </div>
           </div>
           <div className=" md:flex hidden & > *:transition-all  & > *:border-1 & > *:border-solid & > *:border-slate-200 & > *:rounded-md & > *:p-2 gap-2 & > *:flex & > *:items-center & > *:gap-1 & > *:cursor-pointer">
-            <div className="relative group">
+            <div className="relative hover:border-red-500 hover:text-red-500">
               <div className="">
-                <div className=" group hover:border-red-500 flex items-center gap-0.5 hover:text-red-500">
+                <div className="flex items-center ">
                   <svg className=" w-5 h-5 ">
                     <use href="#user"></use>
                   </svg>
-                  <span className="pb-1  ">پنل کاربری</span>
-                  <div className="absolute group-hover:opacity-100 z-20 opacity-0 diora top-7 group-hover:top-full transition-all border-solid overflow-hidden rounded-b-xl rounded-t-md border-t-2 border-amber-400 w-52  left-0 flex flex-col  bg-zinc-700 text-white">
-                    <span className="border-t-1 border-solid border-slate-200 pt-4"></span>
-                    <span className="text-xs pr-2 pb-2 pt-2 hover:bg-slate-400   ">
-                      پنل کاربری
-                    </span>
-                    <span className="text-xs pr-2 pt-2 pb-2  hover:bg-slate-400 ">
-                      سفارشات من
-                    </span>
-                    <span className="text-xs pr-2 pt-2 pb-2 hover:bg-slate-400  ">
-                      علاقه مندی های من
-                    </span>
-                    <span className="text-xs bg-red-600 pt-2 pb-2 pr-2 p-0">
-                      خروج از حساب
-                    </span>
-                  </div>
+                  <span className=" text-sm pr-2 pl-2 font-Dana ">
+                    ورود | ثبت نام
+                  </span>
                 </div>
               </div>
             </div>
             <div className="relative group">
-              <div className="absolute group-hover:opacity-100  opacity-0  top-full left-0">
+              <div className="absolute  opacity-0 group-hover:visible transition-all group-hover:opacity-100 invisible top-full left-0">
                 <div className=" text-white pr-1 pt-1 bg-zinc-800 shadow-2xl left-0 top-full w-60 h-30 rounded-md">
                   <div className=" border-b-1 pb-2 border-solid border-solid-200">
                     <span className="text-xs">سبد خرید شما</span>
