@@ -39,7 +39,7 @@ export default function propsliderPreeSell(props) {
   return (
     <div>
       <div className="max-w-44 bg-slate-300 rounded-sm overflow-hidden flex items-center flex-col props-center gap-2 ">
-        <img className="w-32 sm:w-full rounded-md" src={`../${props.items.img}`} alt="" />
+        <img className="w-full rounded-md" src={`../${props.items.img}`} alt="" />
         <div className="flex flex-col w-full font-Dana ">
           <div className="flex flex-col pr-1">
             <span

@@ -43,12 +43,14 @@ export default function CategurtProducts() {
   }
 
   return (
-    <div className="flex">
-      <div className="mt-30 w-full">
+    <div className="flex pb-10">
+      <div className="mt-30 w-full ">
         <RoadMapSite categury="دسته بندی ها" name={title} />
         <div className="container-custom">
           <div className="flex gap-5 mt-10 ">
-            <FilterCategurtProducts />
+            <div className="md:flex hidden">
+              <FilterCategurtProducts />
+            </div>
             <ContentCategurtProducts />
           </div>
         </div>
