@@ -27,8 +27,8 @@ export default function SliderPreeSellProducts() {
       <SectionsTitle title="پر فروش" />
       <div className="mt-5 x:hidden flex gap-8">
         <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
+          slidesPerView={2}
+          spaceBetween={15}
           pagination={{
             clickable: true,
           }}
@@ -48,7 +48,7 @@ export default function SliderPreeSellProducts() {
       <div className="hidden x:flex xs:hidden mt-10 gap-8">
         <Swiper
           slidesPerView={2}
-          spaceBetween={30}
+          spaceBetween={10}
           pagination={{
             clickable: true,
           }}

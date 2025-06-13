@@ -37,17 +37,19 @@ export default function propsliderPreeSell(props) {
   };
   return (
     <div>
-      <div className="max-w-44  flex items-center flex-col props-center gap-2 ">
+      <div className="max-w-44 bg-slate-300 rounded-sm overflow-hidden flex items-center flex-col props-center gap-2 ">
         <img className="w-32 rounded-md" src={`../${props.items.img}`} alt="" />
-        <div className="flex flex-col w-full ">
-          <span
-            onClick={() => goto()}
-            className="max-w-[130px] text-right overflow-hidden max-h-[1.4em] text-xs inline-block text-[13px]"
-          >
-            {props.items.name}
-          </span>
-          <div className="flex justify-between gap-3 props-center mt-2">
-            <span className="text-xs">قیمت {props.items.price} </span>
+        <div className="flex flex-col w-full font-Dana ">
+          <div className="flex flex-col pr-1">
+            <span
+              onClick={() => goto()}
+              className="max-w-[130px] text-right overflow-hidden max-h-[1.4em] text-xs inline-block text-[13px]"
+            >
+              {props.items.name}
+            </span>
+            <div className="flex justify-between gap-3 props-center mt-2">
+              <span className="text-xs">قیمت {props.items.price} </span>
+            </div>
           </div>
           <div
             onClick={() => loaderHandler(props.addToUserBasket(props.items.id))}
