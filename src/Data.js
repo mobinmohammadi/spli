@@ -628,6 +628,14 @@ const RelatedProducts = [
   },
 ];
 
+const DataFrequentlyAskedQuestions = [
+  {id : 1 , qustion : "کدام مکمل برای افزایش حجم و وزن بهتر است؟"  , answer : "گینر و کراتین بهترین مکمل‌ها برای افزایش حجم و وزن هستند."},
+  {id : 2 , qustion : "بهترین مکمل برای سوزاندن چربی و کاهش وزن چیست؟"  , answer : "بهترین مکمل برای کاهش وزن چربی‌سوز است."},
+  {id : 3 , qustion : "آیا مصرف مکمل‌های بدنسازی عوارضی دارد؟", answer : "مصرف بیش از توصیه شده امکان آسیب دارد. "},
+  {id : 4 , qustion : "آیا مکمل‌هایی که در فروشگاه محمدی به فروش می‌رسند اصل و قابل اعتماد هستند؟"  , answer : "بله همه مکمل‌ها وارداتی هستند و به صورت اورجینال ارائه می‌شوند."},
+  {id : 5 , qustion : "آیا مکمل‌های بدنسازی امکان بازگشت و مرجوعی دارند؟"  , answer : "بله درصورتی که پلمپ محصول باز نشده باشد."},
+]
+
 export {
   allCategury,
   RelatedProducts,
@@ -636,4 +644,5 @@ export {
   allBrandLogo,
   allArticles,
   papularSearchesInwebsite,
+  DataFrequentlyAskedQuestions
 };

@@ -8,6 +8,8 @@ import MenuMobile from "../../assets/Components/MenuMobile/MenuMobile";
 import SectionsPreeSellProducts from "../../assets/Components/SectionsPreeSellProducts/SectionsPreeSellProducts";
 import Slider from "../../assets/Components/Slider/Slider";
 import DiscriptionHome from "../../assets/Components/DiscriptionHome/DiscriptionHome";
+import SectionsTitle from "../../assets/Components/SectionsTitle/SectionsTitle";
+import FrequentlyAskedQuestions from "../../assets/Components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 export default function Home() {
   const [arrayUserBaskets, setArrayUserBaskets] = useState([]);
 
@@ -17,14 +19,16 @@ export default function Home() {
     <>
       <TopBarMobile />
       <Slider />
+
       <WrapperCateguryItem />
-      <div className=" container-custom pt-10 flex flex-col gap-3 pb-10 mt-10-custom">
+      <div className="container-custom  pt-10 pr-5 pl-5 sm:pr-0 sm:pl-0 flex flex-col gap-10 pb-10 mt-10-custom">
         <SectionsPreeSellProducts setArrayUserBaskets={setArrayUserBaskets} />
         <div className="">
           <DiscriptionHome />
         </div>
         <BrandsSupplements />
         <ArticlesSections />
+        <FrequentlyAskedQuestions/>
       </div>
       <div className="mb-32">
         <Footer />
