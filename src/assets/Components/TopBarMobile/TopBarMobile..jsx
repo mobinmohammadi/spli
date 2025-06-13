@@ -118,7 +118,7 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
             />
             <div
               ref={wrapperResultSearchs}
-              className="bg-slate-100 md:w-[24rem] w-full relative h-7 md:h-10 flex item-center justify-center rounded-md"
+              className="bg-slate-100 sm:flex hidden md:w-[24rem] w-full relative h-7 md:h-10 item-center justify-center rounded-md"
             >
               <input
                 onClick={() => {
