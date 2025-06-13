@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FilterCategurtProducts from "./FilterCategurtProducts/FilterCategurtProducts";
 import ContentCategurtProducts from "./ContentCategurtProducts/ContentCategurtProducts";
 import RoadMapSite from "../RoadMapSite/RoadMapSite";
@@ -6,6 +6,7 @@ import TopBarMobile from "../TopBarMobile/TopBarMobile.";
 import { useParams } from "react-router-dom";
 
 export default function CategurtProducts() {
+  const [isRowAndColumns, setIsRowAndColumns] = useState("row");
   const categuryName = useParams();
   console.log(categuryName.categuryProduct);
   let title = "";
@@ -51,7 +52,10 @@ export default function CategurtProducts() {
             <div className="md:flex hidden">
               <FilterCategurtProducts />
             </div>
-            <ContentCategurtProducts />
+            <ContentCategurtProducts
+              isRowAndColumns={isRowAndColumns}
+              setIsRowAndColumns={setIsRowAndColumns}
+            />
           </div>
         </div>
       </div>
