@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import RangePrice from "./RangePrice";
+import RangePrice from "./RangePrice/RangePrice";
 import SearchInCategury from "./SearchInCategury/SearchInCategury";
 
 export default function FilterCategurtProducts() {

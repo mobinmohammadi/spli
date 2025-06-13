@@ -636,6 +636,14 @@ const DataFrequentlyAskedQuestions = [
   {id : 5 , qustion : "آیا مکمل‌های بدنسازی امکان بازگشت و مرجوعی دارند؟"  , answer : "بله درصورتی که پلمپ محصول باز نشده باشد."},
 ]
 
+const TitleCategury = [
+  "پیش فرض",
+  "پرفروش ترین ها",
+  "پر بازدید ترین ها",
+  "جدید ترین ها",
+  "گران ترین ها",
+]
+
 export {
   allCategury,
   RelatedProducts,
@@ -644,5 +652,6 @@ export {
   allBrandLogo,
   allArticles,
   papularSearchesInwebsite,
-  DataFrequentlyAskedQuestions
+  DataFrequentlyAskedQuestions,
+  TitleCategury
 };

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 export default function propsliderPreeSell(props) {
+  
   const btnAddToBasket = useRef(null);
   const loaderAddToBasket = useRef(null);
   const disibledAddToBasketBtn = useRef(null);
@@ -38,17 +39,17 @@ export default function propsliderPreeSell(props) {
   return (
     <div>
       <div className="max-w-44 bg-slate-300 rounded-sm overflow-hidden flex items-center flex-col props-center gap-2 ">
-        <img className="w-32 rounded-md" src={`../${props.items.img}`} alt="" />
+        <img className="w-32 sm:w-full rounded-md" src={`../${props.items.img}`} alt="" />
         <div className="flex flex-col w-full font-Dana ">
           <div className="flex flex-col pr-1">
             <span
               onClick={() => goto()}
               className="max-w-[130px] text-right overflow-hidden max-h-[1.4em] text-xs inline-block text-[13px]"
             >
-              {props.items.name}
+             نام : {props.items.name} 
             </span>
             <div className="flex justify-between gap-3 props-center mt-2">
-              <span className="text-xs">قیمت {props.items.price} </span>
+              <span className="text-xs">قیمت : {props.items.price} </span>
             </div>
           </div>
           <div
