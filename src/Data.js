@@ -639,7 +639,7 @@ const DataFrequentlyAskedQuestions = [
 const TitleCategury = [
   "پیش فرض",
   "پرفروش ترین",
-  "پر بازدید ترین",
+  "ارزان ترین",
   "جدید ترین",
   "گران ترین",
 ]

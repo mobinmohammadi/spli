@@ -9,7 +9,7 @@ export default function TopBarCateguryFilter({
     <div className="flex flex-col gap-1 border-b-1 border-b-slate-300 pb-3">
       <span className="pb-3">مرتب سازی بر اساس :</span>
       <div className="flex justify-between">
-        <div className="grid grid-cols-3 & > *:h-5 gap-2 & > *:text-x & > *:cursor-pointer & > *:hover:border-b-1 & > *:transition-all & > *:border-b-red-400  & > *:pt-1 & > *:pb-1 & > *:pr-2 & > *:pl-2">
+        <div className="grid grid-cols-3 sm:grid-cols-5 & > *:h-5 gap-2 & > *:text-x & > *:cursor-pointer & > *:hover:border-b-1 & > *:transition-all & > *:border-b-red-400  & > *:pt-1 & > *:pb-1 & > *:pr-2 & > *:pl-2">
           {TitleCategury.map((categury, index) => (
             <span
               className={`${
