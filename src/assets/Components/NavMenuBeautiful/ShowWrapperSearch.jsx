@@ -2,10 +2,7 @@ import React, { useRef, useState } from "react";
 import { allProducts } from "../../../Data";
 import { Link } from "react-router-dom";
 
-export default function ShowWrapperSearch({
-  cancelActions,
-  isShowSearchBox,
-}) {
+export default function ShowWrapperSearch({ cancelActions, isShowSearchBox }) {
   const [textValueSearch, setTextValueSearch] = useState("");
   const [allResaltSearch, setAllResaltSearch] = useState([]);
   const [isShowLoaderSearch, setIsShowLoaderSearch] = useState(false);
@@ -21,10 +18,6 @@ export default function ShowWrapperSearch({
       setIsShowLoaderSearch(false);
     }, 900);
 
-    // setTimeout(() => {
-    //   setIsShowLoaderSearch(false)
-
-    // }, 600);
     setTextValueSearch(e.target.value);
     setTimeout(() => {}, 700);
     if (textValueSearch.length < 3) {
@@ -40,13 +33,12 @@ export default function ShowWrapperSearch({
 
         setAllResaltSearch(restultSearch);
       }, 1000);
-      console.log(allResaltSearch);
     }
   };
   return (
     <div
       className={`bg-slate-200 w-full h-[92vh] z-30 ${
-        !isShowSearchBox ? "opacity-0" : "show-Search__box"
+        isShowSearchBox ? "show-Search__box" : "opacity-0 transitions-custom"
       } shadow-2xl fixed top-[100%] left-0`}
     >
       <div className="w-[95%] mx-auto  flex gap-3 flex-col pl-2">
