@@ -65,7 +65,7 @@ export default function CategurtProducts() {
           <div className="flex gap-5 mt-10 ">
             <div
               className={`fixed ${
-                isShowBoxCateguryByMobile ? "opacity-100 z-30" : "opacity-0"
+                isShowBoxCateguryByMobile ? "opacity-100 z-30 visible" : "opacity-0 invisible"
               } sm:opacity-100  sm:static z-10 flex bg-white sm:bg-slate-100 sm:bg-auto sm:top-auto top-[30%] rounded-sm sm:rounded-none shadow-2xl sm:shadow-none border-slate-300 border-solid sm:border-0 border-2  w-[96%] sm:w-auto`}
             >
               <FilterCategurtProducts
