@@ -7,6 +7,7 @@ export default function BasketMobile({
   cart,
   modalUserBasket,
 }) {
+
   const [allPrice, setAllPrice] = useState(0);
 
   function handleAllPriceInBasket() {

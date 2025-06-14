@@ -39,7 +39,7 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
     showDetailsSearch.current.classList.add("hiddenSearchWrapper", "invisible");
   };
 
-  const { cart } = useContext(CartContext);
+  const { cart , removeInBasket } = useContext(CartContext);
 
   return (
     <div className=" border-b-4 block border-solid border-sky-700 bg-white fixed w-full z-20 ">

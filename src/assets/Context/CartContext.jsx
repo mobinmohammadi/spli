@@ -16,6 +16,37 @@ export const CartProvider = ({ children }) => {
     
   };
 
+  const removeInBasket = (productID) => {
+  setCart((prevCart) => {
+    let product  = prevCart.find(product => product.id === productID)
+    if (!product) return prevCart 
+
+    if(product.count > 1){
+     return prevCart.map(item => item.id === productID ? {...item , count : item.count - 1} : item)
+    }
+    else {
+      return prevCart.filter(item => item.id !== productID)
+    }
+  })
+    // if(arrayFoundForMaines.count > 1){
+
+    //   const newArray = arrayFoundForMaines.count--
+    //   setCart(prev => [...prev , {newArray}])
+    //   console.log(newArray);
+      
+    // }
+    // else{
+    // let arrayFoundForDelete = cart.filter(product => product.id !== productID)
+    // setCart(arrayFoundForDelete)
+
+      
+    // }
+
+    
+    // setCart(newArrayAfterDeleteOnProduct)
+    
+  }
+
   useEffect(() => {
     saveInToLocalStorage(cart);
   }, [cart]);
@@ -33,7 +64,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart , removeInBasket }}>
       {children}
     </CartContext.Provider>
   );

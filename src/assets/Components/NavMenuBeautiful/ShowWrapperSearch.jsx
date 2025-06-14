@@ -81,8 +81,7 @@ export default function ShowWrapperSearch({ cancelActions, isShowSearchBox }) {
           {isShowLoaderSearch ? (
             <div
               ref={searchLoader}
-              className={`h-2s  mt-4 rounded-md z-20  
-  bg-slate-200 h-dull ${isShowLoaderSearch ? "flex" : "hidden"}`}
+              className={`h-2s  mt-4 rounded-md z-20 bg-slate-200 h-dull ${isShowLoaderSearch ? "flex" : "hidden"}`}
             >
               <span className="loader-searchs"></span>
             </div>

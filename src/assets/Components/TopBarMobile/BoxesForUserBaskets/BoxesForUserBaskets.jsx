@@ -1,19 +1,22 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
+import { CartContext } from "../../../Context/CartContext";
 
-export default function BoxesForUserBaskets({ name, img, price, count }) {
+export default function BoxesForUserBaskets({id, name, img, price, count }) {
 
   const deleteBtn = useRef(null)
   const acceptForDelete = useRef(null)
   const cancelForDelete = useRef(null)
+      const {removeInBasket} = useContext(CartContext)
+  
 
-  const deleteBtnForUserBasketUser = () => {
+  function deleteBtnForUserBasketUser() {
       acceptForDelete.current.classList.add("openTheDeletModalUserBasket")
 
       acceptForDelete.current.classList.remove("opacity-0")
       acceptForDelete.current.classList.remove("hidden")
   }
 
-  const cancelldeleteBtnForUserBasketUser = () => {
+  function cancelldeleteBtnForUserBasketUser() {
       acceptForDelete.current.classList.remove("openTheDeletModalUserBasket")
       acceptForDelete.current.classList.add("opacity-0")
       // acceptForDelete.current.classList.add("hidden")
@@ -23,6 +26,12 @@ export default function BoxesForUserBaskets({ name, img, price, count }) {
       }, 200);
       
 
+  }
+
+  function handleDeleteInBasket() {
+    
+    removeInBasket(id)
+    cancelldeleteBtnForUserBasketUser()
   }
   return (
     <div className="flex  border-b border-zinc-600 border-solid ">
@@ -49,7 +58,7 @@ export default function BoxesForUserBaskets({ name, img, price, count }) {
             <use href="#x-mark"></use>
           </svg>
          </div>
-         <div  className="">
+         <div onClick={() => handleDeleteInBasket()} className="">
           <svg className="w-5 h-5 hover:text-green-500 transition-all">
             <use href="#check"></use>
           </svg>
