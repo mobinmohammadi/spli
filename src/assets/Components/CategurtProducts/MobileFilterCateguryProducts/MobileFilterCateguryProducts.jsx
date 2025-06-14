@@ -7,7 +7,7 @@ export default function MobileFilterCateguryProducts({
   setIsShowBoxCateguryByMobile,
 }) {
   return (
-    <div className=" fixed top-[37%] p-5 right-[10%] rounded-sm bg-white shadow-2xl w-[80%]  h-56">
+    <div className={`fixed  ${isShowBoxCateguryByMobile ? "styleForBoxesCateguryMobile" : ''} duration-300 z-30 opacity-0 p-5 right-[10%] rounded-sm bg-white shadow-2xl w-[80%]  h-56`}>
       <div className="flex justify-between flex-col h-full">
         <div className="">
           <RangePriceProductMobile />

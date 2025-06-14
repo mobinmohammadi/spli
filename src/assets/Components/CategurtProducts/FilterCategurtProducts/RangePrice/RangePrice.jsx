@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function SinglePriceSlider() {
+export default function SinglePriceSlider({setFilterByRange}) {
   const [isshowPriceRange, setIsShowPriceRange] = useState(false);
 
   const showPriceRangeHandler = () => {
@@ -14,6 +14,7 @@ export default function SinglePriceSlider() {
   const [price, setPrice] = useState(1000000);
 
   const handleChange = (e) => {
+    setFilterByRange(Number(e.target.value))
     setPrice(Number(e.target.value));
   };
 

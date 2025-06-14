@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import RangePrice from "./RangePrice/RangePrice";
 import SearchInCategury from "./SearchInCategury/SearchInCategury";
 
-export default function FilterCategurtProducts() {
+export default function FilterCategurtProducts({setValueSearchInCateguryPage , setFilterByRange}) {
   const [isAvailableOnly, setIsAvailableOnly] = useState(false);
 
   function toggleAvailableOnly () {
@@ -24,8 +24,8 @@ export default function FilterCategurtProducts() {
         </div>
         <span className={`text-xs ${isAvailableOnly ? "border-dashed border-b-gray-800 border-b-1 pb-1 transition-all" :""}`}>فقط کالا های موجود</span>
       </div>
-      <SearchInCategury/>
-      <RangePrice/>
+      <SearchInCategury setValueSearchInCateguryPage={setValueSearchInCateguryPage}/>
+      <RangePrice setFilterByRange={setFilterByRange}/>
     </div>
   );
 }

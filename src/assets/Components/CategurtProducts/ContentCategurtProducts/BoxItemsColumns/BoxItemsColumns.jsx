@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 
 export default function BoxItemsColumns({ items }) {
   const { img, price, name, id, info } = items;
-  console.log(info);
-  
+    
 
   return (
     <div className="flex bg-slate-100 items-center justify-between w-full & > *:flex font-Dana">
      
       <div>
-        <img className="w-20 rounded-sm" src={`${img}`} alt="" />
+        <img className="w-20 rounded-sm text-x" src={`${img}`} alt="خطا در دریافت عکس ...." />
         <div className="pr-1  line-clamp-1 flex flex-col justify-center gap-2">
           <Link to={`/onspageproduct/${id}`} className=" text-xs sm:text-sm max-h-[1.3em]  line-clamp-1">نام : {name} </Link>
           <div className=" text-x sm:text-sm flex items-center gap-0.5 ">

@@ -169,8 +169,8 @@
 const allProducts = [
   {
     id: 1,
-    name: `کراتین کوین لورون`,
-    price: 2_000_000,
+    name: "کراتین کوین لورون",
+    price: 2000000,
     img: "./../Images/Products/2.webp",
     subImg: [
       { id: 1, img: "./../Images/Products/2.webp" },
@@ -184,11 +184,12 @@ const allProducts = [
       servings: 60,
       tasteCount: 0,
     },
+    status: "1"
   },
   {
     id: 2,
     name: "کراتین رونی کلمن",
-    price: 2_750_000,
+    price: 2750000,
     img: "./../Images/Products/1.webp",
     subImg: [
       { id: 1, img: "./../Images/Products/1.webp" },
@@ -202,11 +203,12 @@ const allProducts = [
       servings: 72,
       tasteCount: 0,
     },
+    status: "1"
   },
   {
     id: 3,
     name: "کراتین اپلاید",
-    price: 3_250_000,
+    price: 3250000,
     img: "./../Images/Products/3.webp",
     subImg: [
       { id: 1, img: "./../Images/Products/3-2.webp" },
@@ -220,24 +222,25 @@ const allProducts = [
       servings: 50,
       tasteCount: 0,
     },
+    status: "0"
   },
   {
     id: 4,
     name: "پروتعین وی اپلاید 3 کیلویی",
-    price: 4_000_000,
+    price: 4000000,
     img: "./../Images/Products/4.webp",
     subImg: [
       { id: 1, img: "./../Images/Products/4-2.webp" },
       { id: 2, img: "./../Images/Products/4-3.webp" },
     ],
     taste: [
-      { id: 1, title: "توت فرنگی", status: '1' },
-      { id: 2, title: "کیک بلوبری", status: '0' },
-      { id: 3, title: "پاپ کورن", status: '1' },
+      { id: 1, title: "توت فرنگی", status: "1" },
+      { id: 2, title: "کیک بلوبری", status: "0" },
+      { id: 3, title: "پاپ کورن", status: "1" },
       { id: 4, title: "کارامل", status: "1" },
       { id: 5, title: "کاکائو", status: "1" },
-      { id: 6, title: "وانیلی", status: '0' },
-      { id: 7, title: "کیک هویج", status: '0' },
+      { id: 6, title: "وانیلی", status: "0" },
+      { id: 7, title: "کیک هویج", status: "0" },
     ],
     info: {
       type: "پودر",
@@ -245,11 +248,12 @@ const allProducts = [
       servings: 75,
       tasteCount: 7,
     },
+    status: "1"
   },
   {
     id: 5,
     name: "گلوتامین ماسلتک",
-    price: 825_000,
+    price: 825000,
     img: "./../Images/Products/5.webp",
     subImg: [
       { id: 1, img: "./../Images/Products/5.webp" },
@@ -262,6 +266,7 @@ const allProducts = [
       servings: 60,
       tasteCount: 0,
     },
+    status: "1"
   },
   {
     id: 6,
@@ -280,11 +285,12 @@ const allProducts = [
       servings: 80,
       tasteCount: 0,
     },
+    status: "0"
   },
   {
     id: 7,
     name: "گینر رول وان کیسه ای ",
-    price: 5_490_000,
+    price: 5490000,
     img: "./../Images/Products/10-1.webp",
     subImg: [
       { id: 1, img: "./../Images/Products/10-1.webp" },
@@ -299,11 +305,12 @@ const allProducts = [
       servings: 60,
       tasteCount: 0,
     },
+    status: "1"
   },
   {
     id: 8,
     name: "قرص هورمون رشد یونیورسال جی اچ مکس",
-    price: 3_290_000,
+    price: 3290000,
     img: "./../Images/Products/12-1.webp",
     subImg: [
       { id: 1, img: "./../Images/Products/12-1.webp" },
@@ -317,8 +324,337 @@ const allProducts = [
       servings: 60,
       tasteCount: 0,
     },
+    status: "0"
   },
+    {
+    id: 9,
+    name: "آمینواسید بی‌پی‌آی",
+    price: 1950000,
+    img: "./../Images/Products/13.webp",
+    subImg: [
+      { id: 1, img: "./../Images/Products/13.webp" },
+      { id: 2, img: "./../Images/Products/13-2.webp" },
+    ],
+    categury: "aminos",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "آمریکا",
+      servings: 30,
+      tasteCount: 0,
+    },
+    status: "1"
+  },
+  {
+    id: 10,
+    name: "پمپ نوتری نیترو",
+    price: 1890000,
+    img: "./../Images/Products/14.webp",
+    subImg: [
+      { id: 1, img: "./../Images/Products/14-1.webp" },
+    ],
+    categury: "pump",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "آمریکا",
+      servings: 40,
+      tasteCount: 0,
+    },
+    status: "0"
+  },
+  {
+    id: 11,
+    name: "پروتئین دایت وی آلمانی",
+    price: 3850000,
+    img: "./../Images/Products/15.webp",
+    subImg: [],
+    categury: "protein",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "آلمان",
+      servings: 60,
+      tasteCount: 0,
+    },
+    status: "1"
+  },
+  {
+    id: 12,
+    name: "آمینواسید اپتیموم نوتریشن",
+    price: 2780000,
+    img: "./../Images/Products/16.webp",
+    subImg: [],
+    categury: "aminos",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "آمریکا",
+      servings: 65,
+      tasteCount: 0,
+    },
+    status: "1"
+  },
+  {
+    id: 13,
+    name: "گینر اپتیموم 2 کیلویی",
+    price: 4980000,
+    img: "./../Images/Products/17.webp",
+    subImg: [],
+    categury: "gainer",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "آمریکا",
+      servings: 54,
+      tasteCount: 0,
+    },
+    status: "0"
+  },
+  {
+    id: 14,
+    name: "وی پروتئین ژن استار",
+    price: 1790000,
+    img: "./../Images/Products/18.webp",
+    subImg: [],
+    categury: "protein",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "ایران",
+      servings: 60,
+      tasteCount: 0,
+    },
+    status: "1"
+  },
+  {
+    id: 15,
+    name: "پمپ رونی کلمن",
+    price: 2250000,
+    img: "./../Images/Products/19.webp",
+    subImg: [],
+    categury: "pump",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "آمریکا",
+      servings: 30,
+      tasteCount: 0,
+    },
+    status: "1"
+  },
+  {
+    id: 16,
+    name: "کراتین ناترند",
+    price: 3100000,
+    img: "./../Images/Products/20.webp",
+    subImg: [],
+    categury: "creatin",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "چک",
+      servings: 100,
+      tasteCount: 0,
+    },
+    status: "0"
+  },
+  {
+    id: 17,
+    name: "گلوتامین الیت",
+    price: 1100000,
+    img: "./../Images/Products/21.webp",
+    subImg: [],
+    categury: "glutamine",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "ایران",
+      servings: 50,
+      tasteCount: 0,
+    },
+    status: "1"
+  },
+  {
+    id: 18,
+    name: "هورمون رشد الفا من",
+    price: 2690000,
+    img: "./../Images/Products/22.webp",
+    subImg: [],
+    categury: "Growth hormone",
+    taste: [],
+    info: {
+      type: "قرص",
+      origin: "ایران",
+      servings: 60,
+      tasteCount: 0,
+    },
+    status: "0"
+  },
+  {
+    id: 19,
+    name: "گینر فانتوم",
+    price: 3500000,
+    img: "./../Images/Products/23.webp",
+    subImg: [],
+    categury: "gainer",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "ایران",
+      servings: 70,
+      tasteCount: 0,
+    },
+    status: "1"
+  },
+  {
+    id: 20,
+    name: "پمپ الفا من",
+    price: 1950000,
+    img: "./../Images/Products/24.webp",
+    subImg: [],
+    categury: "pump",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "ایران",
+      servings: 45,
+      tasteCount: 0,
+    },
+    status: "0"
+  },
+  {
+    id: 21,
+    name: "آمینواسید یونیورسال",
+    price: 2990000,
+    img: "./../Images/Products/25.webp",
+    subImg: [],
+    categury: "aminos",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "آمریکا",
+      servings: 44,
+      tasteCount: 0,
+    },
+    status: "1"
+  },
+  {
+    id: 22,
+    name: "گلوتامین ژن استار",
+    price: 950000,
+    img: "./../Images/Products/26.webp",
+    subImg: [],
+    categury: "glutamine",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "ایران",
+      servings: 60,
+      tasteCount: 0,
+    },
+    status: "0"
+  },
+  {
+    id: 23,
+    name: "کراتین ژن استار",
+    price: 1450000,
+    img: "./../Images/Products/27.webp",
+    subImg: [],
+    categury: "creatin",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "ایران",
+      servings: 60,
+      tasteCount: 0,
+    },
+    status: "1"
+  },
+  {
+    id: 24,
+    name: "پروتئین وی رول وان",
+    price: 4550000,
+    img: "./../Images/Products/28.webp",
+    subImg: [],
+    categury: "protein",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "کانادا",
+      servings: 70,
+      tasteCount: 0,
+    },
+    status: "1"
+  },
+  {
+    id: 25,
+    name: "کراتین ایوژن",
+    price: 2950000,
+    img: "./../Images/Products/29.webp",
+    subImg: [],
+    categury: "creatin",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "آمریکا",
+      servings: 60,
+      tasteCount: 0,
+    },
+    status: "0"
+  },
+  {
+    id: 26,
+    name: "بی‌سی‌ای‌ای دوبیس",
+    price: 1550000,
+    img: "./../Images/Products/30.webp",
+    subImg: [],
+    categury: "aminos",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "ایران",
+      servings: 35,
+      tasteCount: 0,
+    },
+    status: "1"
+  },
+  {
+    id: 27,
+    name: "هورمون رشد ماسل مدز",
+    price: 3890000,
+    img: "./../Images/Products/31.webp",
+    subImg: [],
+    categury: "Growth hormone",
+    taste: [],
+    info: {
+      type: "قرص",
+      origin: "آمریکا",
+      servings: 60,
+      tasteCount: 0,
+    },
+    status: "0"
+  },
+  {
+    id: 28,
+    name: "پروتئین دایت رول وان",
+    price: 4100000,
+    img: "./../Images/Products/32.webp",
+    subImg: [],
+    categury: "protein",
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "کانادا",
+      servings: 65,
+      tasteCount: 0,
+    },
+    status: "1"
+  }
 ];
+
+
+
 
 
 const allCategury = [

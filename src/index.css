@@ -103,6 +103,12 @@
   
   /*  */
 
+  .styleForBoxesCateguryMobile{
+    opacity: 100;
+    transition: all 1s ease;
+    top: 37%;
+  }
+
 .style-modalOpen{
   transition: all 0.3s ease ;
 }
