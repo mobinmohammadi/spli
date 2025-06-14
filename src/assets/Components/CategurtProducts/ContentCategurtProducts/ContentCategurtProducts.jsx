@@ -15,16 +15,18 @@ export default function ContentCategurtProducts({
     useState(false);
 
   useEffect(() => {
-    let newDataAfterCategury = [...allProducts];
+    let newDataAfterCategury = [...arrayAllProducts];
 
     switch (titleCategury) {
       case "پیش فرض":
-        newDataAfterCategury = allProducts;
+        newDataAfterCategury = arrayAllProducts;
         break;
       case "ارزان ترین":
         newDataAfterCategury = newDataAfterCategury.filter(
           (product) => product.price < 2000000
         );
+        console.log(newDataAfterCategury)
+        
         break;
       case "گران ترین":
         newDataAfterCategury = newDataAfterCategury.filter(
@@ -44,7 +46,7 @@ export default function ContentCategurtProducts({
       }
     }
     setAllDataProducts(newDataAfterCategury);
-  }, [titleCategury]);
+  }, [titleCategury , arrayAllProducts]);
   useEffect(() => {
     setIsStyleWrapperContentCategury(false);
     const timer = setTimeout(() => {
@@ -83,10 +85,10 @@ export default function ContentCategurtProducts({
         {!arrayAllProducts.length
           ? <span className="text-sm font-Morabba-Bold">در این رنج قیمت محصولی پیدا نشد 😕</span>
           : isRowAndColumns == "row"
-          ? arrayAllProducts.map((item) => (
+          ? allDataProducts.map((item) => (
               <BoxItemsColumns key={item.id} items={item} />
             ))
-          : arrayAllProducts.map((item) => (
+          : allDataProducts.map((item) => (
               <ItemSliderPreeSell key={item.id} items={item} />
             ))}
       </div>
