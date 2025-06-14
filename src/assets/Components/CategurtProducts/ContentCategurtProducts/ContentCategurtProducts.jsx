@@ -38,7 +38,7 @@ export default function ContentCategurtProducts({
         break;
 
       case "پرفروش ترین":
-        newDataAfterCategury = newDataAfterCategury.slice(6, 8);
+        newDataAfterCategury = newDataAfterCategury;
         break;
       default: {
         newDataAfterCategury = [...allDataProducts];
@@ -59,7 +59,7 @@ export default function ContentCategurtProducts({
     <div className="flex relative flex-col items-center w-full pb-5 bg-white ">
       <div
         onClick={() => setIsShowBoxCateguryByMobile(true)}
-        className="absolute cursor-pointer -top-6 right-0"
+        className="absolute sm:hidden cursor-pointer -top-6 right-0"
       >
         <svg className="w-5 h-5">
           <use href="#bolt"></use>

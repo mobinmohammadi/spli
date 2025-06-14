@@ -1,20 +1,23 @@
-import React, { Component, useEffect, useRef, useState } from "react";
+import React, { Component, useContext, useEffect, useRef, useState } from "react";
 import InstagramStoriesModal from "../StoryFicher/StoryFicher";
 import { papularSearchesInwebsite, preSellProducts } from "../../../Data.js";
 import TopSixSearchInWebsite from "../TopSixSearchInWebsite/TopSixSearchInWebsite";
 import BoxForResultSearches from "../BoxForResultSearches/BoxForResultSearches.jsx";
 import BoxesForUserBaskets from "./BoxesForUserBaskets/BoxesForUserBaskets.jsx";
+import { CartContext } from "../../Context/CartContext.jsx";
 export default function TopBarMobile({ allPrices, arrayUserBasket }) {
+
+
   const [arrayResultBeforSearch, setArrayResultBeforSearch] = useState([]);
   const [allPrice, setAllPrice] = useState(null);
   const [searchValue, setSearchValue] = useState("");
+
   const wrapperResultSearchs = useRef();
   const wrapperDetailsSearch = useRef();
   const btnOpenUserBasket = useRef();
   const modalUserBasket = useRef();
   const [isShowLayerModals, setIsShowLayerModals] = useState(false);
 
-  console.log(arrayResultBeforSearch);
 
   const loaderSearch = useRef();
   const [isShowLayer, setIsShowLayer] = useState(false);
@@ -101,6 +104,13 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
   useEffect(() => {
     lagikForSearchInput();
   }, [searchValue]);
+
+  const {cart} = useContext(CartContext)
+
+  useEffect(() => {
+    console.log(cart);
+    
+  }, [cart])
 
   const showDetailsSearch = useRef();
 
@@ -206,6 +216,8 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
                     <span className="text-xs">سبد خرید شما</span>
                   </div>
                   <div className="flex justify-center items-center h-[77%]">
+                    
+     
                     <span className="text-xs">سبد خرید شما خالی میباشد 😥</span>
                   </div>
                 </div>
@@ -253,10 +265,10 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
             <div className="border-b border-solid border-zinc-600 pb-4">
               <span className="pr-2 text-xs">سبد خرید شما</span>
             </div>
-            {arrayUserBasket?.length ? (
+            {cart?.length ? (
               <div className="mt-4 h-[500px] w-full overflow-y-auto">
-                {arrayUserBasket
-                  ? arrayUserBasket.map((item) => (
+                {cart
+                  ? cart.map((item) => (
                       <BoxesForUserBaskets {...item} />
                     ))
                   : null}

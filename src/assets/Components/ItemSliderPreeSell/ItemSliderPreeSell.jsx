@@ -1,32 +1,37 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import  { CartContext }  from "../../Context/CartContext"
 
 export default function propsliderPreeSell(props) {
   
+  const { addToCart } = useContext(CartContext)
+
+
   const btnAddToBasket = useRef(null);
   const loaderAddToBasket = useRef(null);
   const disibledAddToBasketBtn = useRef(null);
 
-  const loaderHandler = (e) => {
-    console.log("ljksjvji ===> ", props.items.id);
+  const loaderHandler = () => {
 
-    disibledAddToBasketBtn.current.classList.add("opacity-100");
-    disibledAddToBasketBtn.current.classList.add("transitions-all");
-    disibledAddToBasketBtn.current.classList.add("visible");
+    // disibledAddToBasketBtn.current.classList.add("opacity-100");
+    // disibledAddToBasketBtn.current.classList.add("transitions-all");
+    // disibledAddToBasketBtn.current.classList.add("visible");
 
-    loaderAddToBasket.current.classList.remove("opacity-0");
-    btnAddToBasket.current.classList.add("hidden");
-    btnAddToBasket.current.classList.add("hidden");
-    console.log(loaderAddToBasket.current);
-    setTimeout(() => {
-      loaderAddToBasket.current.classList.add("opacity-0");
-      btnAddToBasket.current.classList.remove("hidden");
-      console.log(loaderAddToBasket.current);
-      disibledAddToBasketBtn.current.classList.remove("opacity-100");
-      disibledAddToBasketBtn.current.classList.remove("transitions-all");
-      disibledAddToBasketBtn.current.classList.remove("visible");
-    }, 1500);
+    // loaderAddToBasket.current.classList.remove("opacity-0");
+    // btnAddToBasket.current.classList.add("hidden");
+    // btnAddToBasket.current.classList.add("hidden");
+    // console.log(loaderAddToBasket.current);
+    // setTimeout(() => {
+    //   loaderAddToBasket.current.classList.add("opacity-0");
+    //   btnAddToBasket.current.classList.remove("hidden");
+    //   console.log(loaderAddToBasket.current);
+    //   disibledAddToBasketBtn.current.classList.remove("opacity-100");
+    //   disibledAddToBasketBtn.current.classList.remove("transitions-all");
+    //   disibledAddToBasketBtn.current.classList.remove("visible");
+    // }, 1500);
+
+    addToCart(props.items)
   };
 
   let navigate = useNavigate();
@@ -53,7 +58,7 @@ export default function propsliderPreeSell(props) {
             </div>
           </div>
           <div
-            onClick={() => loaderHandler(props.addToUserBasket(props.items.id))}
+            onClick={() => loaderHandler()}
             className="relative mt-3 bg-green-500 rounded-sm h-8 flex items-center justify-center"
           >
             <button
