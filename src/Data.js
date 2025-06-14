@@ -1,3 +1,171 @@
+// const allProducts = [
+//   {
+//     id: 1,
+//     name: `کراتین کوین لورون`,
+//     price: 2_000_000,
+//     img: "./../Images/Products/2.webp",
+//     subImg: [
+//       {
+//         id: 1,
+//         img: "./../Images/Products/2.webp",
+//       },
+//       {
+//         id: 2,
+//         img: "./../Images/Products/2-2.webp",
+//       },
+//     ],
+//     categury: "creatin",
+//     taste: [],
+//     // "qty" : 1
+//   },
+//   {
+//     id: 2,
+//     name: "کراتین رونی کلمن",
+//     price: 2_750_000,
+//     img: "./../Images/Products/1.webp",
+//     subImg: [
+//       {
+//         id: 1,
+//         img: "./../Images/Products/1.webp",
+//       },
+//       {
+//         id: 2,
+//         img: "./../Images/Products/1-1.webp",
+//       },
+//     ],
+//     categury: "creatin",
+//     taste: [],
+
+//   },
+//   {
+//     id: 3,
+//     name: "کراتین اپلاید",
+//     price: 3_250_000,
+//     img: "./../Images/Products/3.webp",
+//     subImg: [
+//       {
+//         id: 1,
+//         img: "./../Images/Products/3-2.webp",
+//       },
+//       {
+//         id: 2,
+//         img: "./../Images/Products/3-3.webp",
+//       },
+//     ],
+//     categury: "creatin",
+//     taste: [],
+
+
+//   },
+//   {
+//     id: 4,
+//     name: "پروتعین وی اپلاید 3 کیلویی",
+//     price: 4_000_000,
+//     img: "./../Images/Products/4.webp",
+//     subImg: [
+//       {
+//         id: 1,
+//         img: "./../Images/Products/4-2.webp",
+//       },
+//       {
+//         id: 2,
+//         img: "./../Images/Products/4-3.webp",
+//       },
+
+//     ],
+//     taste: [
+//       { id: 1, title: " توت فرنگی", status: '1' },
+//       { id: 2, title: "  کیک بلوبری", status: '0' },
+//       { id: 3, title: " پاپ کورن ", status: '1' },
+//       { id: 4, title: " کارامل ", status: "1" },
+//       { id: 5, title: " کاکائو ", status: "1" },
+//       { id: 6, title: "   وانیلی", status: '0' },
+//       { id: 7, title: "  کیک هویج", status: '0' }
+//     ],
+//   },
+//   {
+//     id: 5,
+//     name: "گلوتامین ماسلتک",
+//     price: 825_000,
+//     img: "./../Images/Products/5.webp",
+//     img: "./../Images/Products/5.webp",
+//     subImg: [
+//       {
+//         id: 1,
+//         img: "./../Images/Products/5.webp",
+//       },
+//       {
+//         id: 2,
+//         img: "./../Images/Products/5-1.webp",
+//         taste: []
+//       },
+
+//     ],
+//   },
+//   {
+//     id: 6,
+//     name: "کراتین مونوهیدرات ماسلتک",
+//     img: "./../Images/Products/8-2.webp",
+//     subImg: [
+//       {
+//         id: 1,
+//         img: "./../Images/Products/8-2.webp",
+//       },
+//       {
+//         id: 2,
+//         img: "./../Images/Products/8-3.webp",
+//       },
+//       {
+//         id: 3,
+//         img: "./../Images/Products/8-1.webp",
+//       },
+//     ],
+//     categury: "creatin",
+//     taste : [],
+
+
+//   },
+//   {
+//     id: 7,
+//     name: "گینر رول وان کیسه ای ",
+//     price: 5_490_000,
+//     img: "./../Images/Products/10-1.webp",
+//     subImg: [
+//       {
+//         id: 1,
+//         img: "./../Images/Products/10-1.webp",
+//       },
+//       {
+//         id: 2,
+//         img: "./../Images/Products/10-2.webp",
+//       },
+//     ],
+//     categury: "gainer",
+//     taste : [],
+//     "qty" : 1
+
+//   },
+//   {
+//     id: 8,
+//     name: " قرص هورمون رشد یونیورسال جی اچ مکس ",
+//     price: 3_290_000,
+//     img: "./../Images/Products/12-1.webp",
+//     subImg: [
+//       {
+//         id: 1,
+//         img: "./../Images/Products/12-1.webp",
+//       },
+//       {
+//         id: 2,
+//         img: "./../Images/Products/12-2.webp",
+//       },
+//     ],
+//     categury: "Growth hormone",
+//     taste : [],
+
+//   },
+// ];
+
 const allProducts = [
   {
     id: 1,
@@ -5,18 +173,17 @@ const allProducts = [
     price: 2_000_000,
     img: "./../Images/Products/2.webp",
     subImg: [
-      {
-        id: 1,
-        img: "./../Images/Products/2.webp",
-      },
-      {
-        id: 2,
-        img: "./../Images/Products/2-2.webp",
-      },
+      { id: 1, img: "./../Images/Products/2.webp" },
+      { id: 2, img: "./../Images/Products/2-2.webp" },
     ],
     categury: "creatin",
     taste: [],
-    // "qty" : 1
+    info: {
+      type: "پودر",
+      origin: "آلمان",
+      servings: 60,
+      tasteCount: 0,
+    },
   },
   {
     id: 2,
@@ -24,18 +191,17 @@ const allProducts = [
     price: 2_750_000,
     img: "./../Images/Products/1.webp",
     subImg: [
-      {
-        id: 1,
-        img: "./../Images/Products/1.webp",
-      },
-      {
-        id: 2,
-        img: "./../Images/Products/1-1.webp",
-      },
+      { id: 1, img: "./../Images/Products/1.webp" },
+      { id: 2, img: "./../Images/Products/1-1.webp" },
     ],
     categury: "creatin",
     taste: [],
-
+    info: {
+      type: "پودر",
+      origin: "آمریکا",
+      servings: 72,
+      tasteCount: 0,
+    },
   },
   {
     id: 3,
@@ -43,19 +209,17 @@ const allProducts = [
     price: 3_250_000,
     img: "./../Images/Products/3.webp",
     subImg: [
-      {
-        id: 1,
-        img: "./../Images/Products/3-2.webp",
-      },
-      {
-        id: 2,
-        img: "./../Images/Products/3-3.webp",
-      },
+      { id: 1, img: "./../Images/Products/3-2.webp" },
+      { id: 2, img: "./../Images/Products/3-3.webp" },
     ],
     categury: "creatin",
     taste: [],
-
-
+    info: {
+      type: "پودر",
+      origin: "انگلیس",
+      servings: 50,
+      tasteCount: 0,
+    },
   },
   {
     id: 4,
@@ -63,67 +227,59 @@ const allProducts = [
     price: 4_000_000,
     img: "./../Images/Products/4.webp",
     subImg: [
-      {
-        id: 1,
-        img: "./../Images/Products/4-2.webp",
-      },
-      {
-        id: 2,
-        img: "./../Images/Products/4-3.webp",
-      },
-
+      { id: 1, img: "./../Images/Products/4-2.webp" },
+      { id: 2, img: "./../Images/Products/4-3.webp" },
     ],
     taste: [
-      { id: 1, title: " توت فرنگی", status: '1' },
-      { id: 2, title: "  کیک بلوبری", status: '0' },
-      { id: 3, title: " پاپ کورن ", status: '1' },
-      { id: 4, title: " کارامل ", status: "1" },
-      { id: 5, title: " کاکائو ", status: "1" },
-      { id: 6, title: "   وانیلی", status: '0' },
-      { id: 7, title: "  کیک هویج", status: '0' }
+      { id: 1, title: "توت فرنگی", status: '1' },
+      { id: 2, title: "کیک بلوبری", status: '0' },
+      { id: 3, title: "پاپ کورن", status: '1' },
+      { id: 4, title: "کارامل", status: "1" },
+      { id: 5, title: "کاکائو", status: "1" },
+      { id: 6, title: "وانیلی", status: '0' },
+      { id: 7, title: "کیک هویج", status: '0' },
     ],
+    info: {
+      type: "پودر",
+      origin: "انگلیس",
+      servings: 75,
+      tasteCount: 7,
+    },
   },
   {
     id: 5,
     name: "گلوتامین ماسلتک",
     price: 825_000,
     img: "./../Images/Products/5.webp",
-    img: "./../Images/Products/5.webp",
     subImg: [
-      {
-        id: 1,
-        img: "./../Images/Products/5.webp",
-      },
-      {
-        id: 2,
-        img: "./../Images/Products/5-1.webp",
-        taste: []
-      },
-
+      { id: 1, img: "./../Images/Products/5.webp" },
+      { id: 2, img: "./../Images/Products/5-1.webp" },
     ],
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "آمریکا",
+      servings: 60,
+      tasteCount: 0,
+    },
   },
   {
     id: 6,
     name: "کراتین مونوهیدرات ماسلتک",
     img: "./../Images/Products/8-2.webp",
     subImg: [
-      {
-        id: 1,
-        img: "./../Images/Products/8-2.webp",
-      },
-      {
-        id: 2,
-        img: "./../Images/Products/8-3.webp",
-      },
-      {
-        id: 3,
-        img: "./../Images/Products/8-1.webp",
-      },
+      { id: 1, img: "./../Images/Products/8-2.webp" },
+      { id: 2, img: "./../Images/Products/8-3.webp" },
+      { id: 3, img: "./../Images/Products/8-1.webp" },
     ],
     categury: "creatin",
-    taste : [],
-
-
+    taste: [],
+    info: {
+      type: "پودر",
+      origin: "آمریکا",
+      servings: 80,
+      tasteCount: 0,
+    },
   },
   {
     id: 7,
@@ -131,40 +287,39 @@ const allProducts = [
     price: 5_490_000,
     img: "./../Images/Products/10-1.webp",
     subImg: [
-      {
-        id: 1,
-        img: "./../Images/Products/10-1.webp",
-      },
-      {
-        id: 2,
-        img: "./../Images/Products/10-2.webp",
-      },
+      { id: 1, img: "./../Images/Products/10-1.webp" },
+      { id: 2, img: "./../Images/Products/10-2.webp" },
     ],
     categury: "gainer",
-    taste : [],
-    "qty" : 1
-
+    taste: [],
+    qty: 1,
+    info: {
+      type: "پودر",
+      origin: "کانادا",
+      servings: 60,
+      tasteCount: 0,
+    },
   },
   {
     id: 8,
-    name: " قرص هورمون رشد یونیورسال جی اچ مکس ",
+    name: "قرص هورمون رشد یونیورسال جی اچ مکس",
     price: 3_290_000,
     img: "./../Images/Products/12-1.webp",
     subImg: [
-      {
-        id: 1,
-        img: "./../Images/Products/12-1.webp",
-      },
-      {
-        id: 2,
-        img: "./../Images/Products/12-2.webp",
-      },
+      { id: 1, img: "./../Images/Products/12-1.webp" },
+      { id: 2, img: "./../Images/Products/12-2.webp" },
     ],
     categury: "Growth hormone",
-    taste : [],
-
+    taste: [],
+    info: {
+      type: "قرص",
+      origin: "آمریکا",
+      servings: 60,
+      tasteCount: 0,
+    },
   },
 ];
+
 
 const allCategury = [
   { id: 1, name: "پروتئین وی", img: "./Images/Categury/1.webp" , link : "/categuryByProducts/protein"},

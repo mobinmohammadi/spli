@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import TopBarCateguryFilter from "./TopBarCateguryFilter/TopBarCateguryFilter";
 import ItemSliderPreeSell from "./../../ItemSliderPreeSell/ItemSliderPreeSell";
 import { allProducts } from "../../../../Data";
+import BoxItemsColumns from "./BoxItemsColumns/BoxItemsColumns";
 export default function ContentCategurtProducts({
   isRowAndColumns,
   setIsRowAndColumns,
@@ -61,15 +62,21 @@ export default function ContentCategurtProducts({
         />
       </div>
       <div
-        className={`${isRowAndColumns == "row" ? "flex flex-col" : "grid"}  w-full ${
+        className={`${
+          isRowAndColumns == "row" ? "flex flex-col w-full" : "grid"
+        }  w-full ${
           isStyleWrapperContentCategury
             ? "mt-8 opacity-100"
             : "mb-15  opacity-0 invisible"
         } grid-cols-2 transitions-custom x:grid-cols-3 sm:grid-cols-4 justify-center items-center gap-3  pr-3 pl-3`}
       >
-        {allDataProducts.map((item) => (
-          <ItemSliderPreeSell key={item.id} items={item} />
-        ))}
+        {isRowAndColumns == "row"
+          ? (allDataProducts.map((item) => (
+              <BoxItemsColumns key={item.id} items={item} />
+            )))
+          : allDataProducts.map((item) => (
+              <ItemSliderPreeSell key={item.id} items={item} />
+            ))}
       </div>
     </div>
   );
