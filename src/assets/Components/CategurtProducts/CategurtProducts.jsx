@@ -49,8 +49,9 @@ export default function CategurtProducts() {
       categoryKey = "glotamin"
 
       break;
-    case "moltivitamin":
+    case "multivitamin":
       title = "مولتی ویتامین";
+      categoryKey = "multivitamin"
       break;
     case "bcaa":
       title = "بی سی ای ای";
