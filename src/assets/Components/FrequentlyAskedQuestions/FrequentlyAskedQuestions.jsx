@@ -8,7 +8,7 @@ export default function FrequentlyAskedQuestions() {
       <SectionsTitle title="سوالات متداول" />
       <div className="mt-5 pr-5 pl-5 ">
         {DataFrequentlyAskedQuestions.map(item => (
-          <BoxFrequentlyAskedQuestions {...item}/>
+          <BoxFrequentlyAskedQuestions key={item.id} {...item}/>
         ))}
         
       </div>

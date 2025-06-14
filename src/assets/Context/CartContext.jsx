@@ -3,27 +3,34 @@ import { createContext, useEffect, useState } from "react";
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (product) => {
-      setCart((prevCart) => {
-        const exist  = prevCart.find(item => item.id == product.id)
-
-
-        if(exist){
-           return prevCart.map(item => item.id === product.id ? {...item , count : item.count + 1 } : item )
-        }
-        else {
-            return [...prevCart , {...product , count : 1}]
-        }
-    });
+  const [cart, setCart] = useState(() => {
+    const storedCart = localStorage.getItem("cart")
+    return storedCart ? JSON.parse(storedCart) : []
+  });
+  const saveInToLocalStorage = (cart) => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
+  const getDataInLocaleStorage = () => {
+      const localStorageData = JSON.parse(localStorage.getItem("cart"));
+    console.log(localStorageData);
     
   };
 
   useEffect(() => {
-    console.log(cart);
-    
-  },[cart])
+    saveInToLocalStorage(cart);
+  }, [cart]);
+  const addToCart = (product) => {
+    setCart((prevCart) => {
+      const exist = prevCart.find((item) => item.id == product.id);
+      if (exist) {
+        return prevCart.map((item) =>
+          item.id === product.id ? { ...item, count: item.count + 1 } : item
+        );
+      } else {
+        return [...prevCart, { ...product, count: 1 }];
+      }
+    });
+  };
 
   return (
     <CartContext.Provider value={{ cart, addToCart }}>

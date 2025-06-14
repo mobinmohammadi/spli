@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-export default function BoxesForUserBaskets({ name, img, price, qty }) {
+export default function BoxesForUserBaskets({ name, img, price, count }) {
 
   const deleteBtn = useRef(null)
   const acceptForDelete = useRef(null)
@@ -31,8 +31,8 @@ export default function BoxesForUserBaskets({ name, img, price, qty }) {
         <div className="flex flex-col justify-between">
           <span className="text-sm">{name}</span>
           <div className="flex gap-2">
-            <span className="text-xs ">{price} تومان</span>
-            <span className="text-xs text-cyan-700"> {qty} عدد</span>
+            <span className="text-xs ">{price.toLocaleString()} تومان</span>
+            <span className="text-xs text-cyan-700"> {count} عدد</span>
           </div>
         </div>
         <div ref={deleteBtn} onClick={() => deleteBtnForUserBasketUser()} className="cursor-pointer flex hover:& > *:hover:text-red-600 justify-center items-center ">

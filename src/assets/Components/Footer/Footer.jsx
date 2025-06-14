@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className=" pt-5 rounded-tr-md rounded-tl-md">
+    <div className=" pt-5 rounded-tr-md rounded-tl-md font-Dana">
       <div>
         <div className="flex justify-between sm:flex-row sm:gap-0 gap-5 flex-col items-center sm:items-start pt-5 pb-5 pr-5 pl-5 bg-white">
           <div className="flex flex-col sm:text-right text-center sm:gap-2">
@@ -98,7 +98,10 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-      <div className="bg-slate-400 text-center pt-2 pb-2 text-zinc-800 font-bold">ساخته شده توسط مبین محمدی</div>
+      <div className="bg-slate-400 text-center pt-2 pb-2 text-zinc-800 font-bold">
+          <span>ساخته شده توسط </span>
+          <span className="text-green-800 font-Morabba">Mobin Rc </span>
+         </div>
     </div>
   );
 }

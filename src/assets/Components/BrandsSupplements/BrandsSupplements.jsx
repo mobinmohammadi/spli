@@ -10,7 +10,7 @@ export default function BrandsSupplements() {
         <div className="grid grid-cols-2 x:grid-cols-3 xs:grid-cols-4 md:grid-cols-6  gap-2 mt-5 mb-5 items-center justify-center">
         {allBrandLogo.map(logo => (
 
-        <BrandsItem {...logo}/>
+        <BrandsItem key={logo.id} {...logo}/>
         ))}
 
 

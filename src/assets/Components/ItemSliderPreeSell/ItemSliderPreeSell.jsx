@@ -1,37 +1,35 @@
 import React, { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import  { CartContext }  from "../../Context/CartContext"
+import { CartContext } from "../../Context/CartContext";
 
 export default function propsliderPreeSell(props) {
-  
-  const { addToCart } = useContext(CartContext)
-
+  const { addToCart } = useContext(CartContext);
 
   const btnAddToBasket = useRef(null);
   const loaderAddToBasket = useRef(null);
   const disibledAddToBasketBtn = useRef(null);
 
   const loaderHandler = () => {
+    disibledAddToBasketBtn.current.classList.add(
+      "opacity-100",
+      "transitions-all",
+      "visible"
+    );
 
-    // disibledAddToBasketBtn.current.classList.add("opacity-100");
-    // disibledAddToBasketBtn.current.classList.add("transitions-all");
-    // disibledAddToBasketBtn.current.classList.add("visible");
+    loaderAddToBasket.current.classList.remove("opacity-0");
+    btnAddToBasket.current.classList.add("hidden");
+    setTimeout(() => {
+      loaderAddToBasket.current.classList.add("opacity-0");
+      btnAddToBasket.current.classList.remove("hidden");
+      disibledAddToBasketBtn.current.classList.remove(
+        "opacity-100",
+        "transitions-all",
+        "visible"
+      );
+    }, 1500);
 
-    // loaderAddToBasket.current.classList.remove("opacity-0");
-    // btnAddToBasket.current.classList.add("hidden");
-    // btnAddToBasket.current.classList.add("hidden");
-    // console.log(loaderAddToBasket.current);
-    // setTimeout(() => {
-    //   loaderAddToBasket.current.classList.add("opacity-0");
-    //   btnAddToBasket.current.classList.remove("hidden");
-    //   console.log(loaderAddToBasket.current);
-    //   disibledAddToBasketBtn.current.classList.remove("opacity-100");
-    //   disibledAddToBasketBtn.current.classList.remove("transitions-all");
-    //   disibledAddToBasketBtn.current.classList.remove("visible");
-    // }, 1500);
-
-    addToCart(props.items)
+    addToCart(props.items);
   };
 
   let navigate = useNavigate();
@@ -44,14 +42,18 @@ export default function propsliderPreeSell(props) {
   return (
     <div>
       <div className="max-w-44 bg-slate-300 rounded-sm overflow-hidden flex items-center flex-col props-center gap-2 ">
-        <img className="w-full rounded-md" src={`../${props.items.img}`} alt="خطا در دریافت عکس ..." />
+        <img
+          className="w-full rounded-md"
+          src={`../${props.items.img}`}
+          alt="خطا در دریافت عکس ..."
+        />
         <div className="flex flex-col w-full font-Dana ">
           <div className="flex flex-col pr-1">
             <span
               onClick={() => goto()}
               className="max-w-[130px] text-right overflow-hidden max-h-[1.4em] text-xs inline-block text-[13px]"
             >
-             نام : {props.items.name} 
+              نام : {props.items.name}
             </span>
             <div className="flex justify-between gap-3 props-center mt-2">
               <span className="text-xs">قیمت : {props.items.price} </span>

@@ -13,7 +13,6 @@ import FrequentlyAskedQuestions from "../../assets/Components/FrequentlyAskedQue
 export default function Home() {
   const [arrayUserBaskets, setArrayUserBaskets] = useState([]);
 
-  console.log(arrayUserBaskets);
 
   return (
     <>

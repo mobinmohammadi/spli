@@ -18,7 +18,7 @@ export default function ArticlesSections() {
         <div className="bg-white  mt-10 grid grid-cols-1 x:grid-cols-2 xs:grid-cols-3 mmd:grid-cols-4 gap-2">
             {allArticles.slice(0,4  ).map(articles => (
 
-            <ArticlesItems {...articles}/>
+            <ArticlesItems key={articles.id} {...articles}/>
             ))}
            
 

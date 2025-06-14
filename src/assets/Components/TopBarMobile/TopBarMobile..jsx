@@ -1,25 +1,21 @@
-import React, { Component, useContext, useEffect, useRef, useState } from "react";
-import InstagramStoriesModal from "../StoryFicher/StoryFicher";
-import { papularSearchesInwebsite, preSellProducts } from "../../../Data.js";
-import TopSixSearchInWebsite from "../TopSixSearchInWebsite/TopSixSearchInWebsite";
-import BoxForResultSearches from "../BoxForResultSearches/BoxForResultSearches.jsx";
-import BoxesForUserBaskets from "./BoxesForUserBaskets/BoxesForUserBaskets.jsx";
+import React, {
+  Component,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+
 import { CartContext } from "../../Context/CartContext.jsx";
+import BasketMobile from "./BasketMobile/BasketMobile.jsx";
+import SearchBoxTopBar from "./SearchBoxTopBar/SearchBoxTopBar.jsx";
 export default function TopBarMobile({ allPrices, arrayUserBasket }) {
-
-
-  const [arrayResultBeforSearch, setArrayResultBeforSearch] = useState([]);
-  const [allPrice, setAllPrice] = useState(null);
-  const [searchValue, setSearchValue] = useState("");
-
-  const wrapperResultSearchs = useRef();
-  const wrapperDetailsSearch = useRef();
-  const btnOpenUserBasket = useRef();
   const modalUserBasket = useRef();
+  const showDetailsSearch = useRef();
+
+  const btnOpenUserBasket = useRef();
   const [isShowLayerModals, setIsShowLayerModals] = useState(false);
 
-
-  const loaderSearch = useRef();
   const [isShowLayer, setIsShowLayer] = useState(false);
 
   const openModalUserbasket = () => {
@@ -38,81 +34,12 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
     setIsShowLayerModals(false);
   };
 
-  const ShowSearchModals = () => {
-    showDetailsSearch.current.classList.remove("hiddenSearchWrapper" , "invisible");
-    showDetailsSearch.current.classList.add("showSearchWrapper");
-  };
-  const notFoundItemSearchs = useRef();
   const closeModaleSearch = () => {
     showDetailsSearch.current.classList.remove("showSearchWrapper");
-    showDetailsSearch.current.classList.add("hiddenSearchWrapper" , "invisible");
+    showDetailsSearch.current.classList.add("hiddenSearchWrapper", "invisible");
   };
 
-  const serchingToProducts = (e) => {
-    setSearchValue(e);
-    console.log(searchValue);
-
-    {
-      if (searchValue.length > 3) {
-        loaderSearch.current.classList.remove("hidden");
-        loaderSearch.current.classList.add("flex");
-
-        setTimeout(() => {
-          loaderSearch.current.classList.add("hidden");
-        }, 1000);
-        const resultSerching = preSellProducts.filter((item) =>
-          item.name.includes(searchValue)
-        );
-
-        console.log(resultSerching);
-        setArrayResultBeforSearch(resultSerching);
-        if (!arrayResultBeforSearch.length) {
-          setTimeout(() => {
-            notFoundItemSearchs.current.classList.remove("hidden");
-            notFoundItemSearchs.current.classList.add("flex");
-          }, 1000);
-          wrapperDetailsSearch.current.classList.add("hidden");
-        } else {
-          notFoundItemSearchs.current.classList.remove("flex");
-          notFoundItemSearchs.current.classList.add("hidden");
-        }
-      }
-    }
-  };
-
-  const lagikForSearchInput = () => {
-    if (searchValue.length >= 5 && !arrayResultBeforSearch.length) {
-      return (
-        <div
-          ref={notFoundItemSearchs}
-          className="hidden z-10 items-center justify-center bg-red-500 font-bold text-md text-white pt-2 pb-2 "
-        >
-          <span>موردی یافت نشد 😑</span>
-        </div>
-      );
-    } else if (searchValue.length >= 2 && searchValue.length <= 4) {
-      return (
-        <div
-          ref={notFoundItemSearchs}
-          className="hidden items-center justify-center bg-red-500 font-bold text-md text-white pt-2 pb-2 "
-        >
-          <span>مقدار وارد شده شما کمتر از 5 کاراکتر است 🤔</span>
-        </div>
-      );
-    }
-  };
-  useEffect(() => {
-    lagikForSearchInput();
-  }, [searchValue]);
-
-  const {cart} = useContext(CartContext)
-
-  useEffect(() => {
-    console.log(cart);
-    
-  }, [cart])
-
-  const showDetailsSearch = useRef();
+  const { cart } = useContext(CartContext);
 
   return (
     <div className=" border-b-4 block border-solid border-sky-700 bg-white fixed w-full z-20 ">
@@ -120,82 +47,11 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
         <img className="" src="./s/offer.gif" alt="" />
 
         <div className="pst  bg-white   pl-5  flex  items-center justify-between">
-          <div className="flex z-10 w-full items-center  sm:justify-between md:w-[50%] items-right md:justify-right  ">
-            <img
-              className="w-15"
-              src="https://www.svgrepo.com/show/489305/gym.svg"
-              alt=""
-            />
-            <div
-              ref={wrapperResultSearchs}
-              className="bg-slate-100 sm:flex hidden md:w-[24rem] w-full relative h-7 md:h-10 item-center justify-center rounded-md"
-            >
-              <input
-                onClick={() => {
-                  ShowSearchModals();
-                  setIsShowLayer(true);
-                }}
-                onChange={(e) => serchingToProducts(e.target.value)}
-                value={searchValue}
-                type="text"
-                className="w-full pl-10 pr-2 text-x sm:text-xs font-Dana  outline-0 "
-                placeholder="در بین هزاران محصول ما سرچ بزنید ..."
-              />
-
-              <div className="absolute pr-2  pl-2 bg-red-500 flex items-center   text-white h-full left-0 rounded-tl-md rounded-bl-md cursor-pointer">
-                <svg className="w-4 h-4 md:w-6 md:h-6">
-                  <use href="#search-normal"></use>
-                </svg>
-              </div>
-              <div
-                ref={showDetailsSearch}
-                className="absolute pt2 pb-2 transition-all hiddenSearchWrapper invisible shadow-2xl  rounded-b-md text-xs pt-2  bg-slate-100 text-zinc-700   rounded-md z-10  w-full  top-[150%]"
-              >
-                {lagikForSearchInput()}
-                <div
-                  ref={loaderSearch}
-                  className="w-full flex-col gap-10 font-Morabba-Bold hidden absolute h-72  items-center justify-center bg-white"
-                >
-                  <span class="loader"></span>
-                  <div className="text-center pl-5">
-                    در حال سرچ لطفا منتظر بمانید ....
-                  </div>
-                </div>
-                {arrayResultBeforSearch.length ? (
-                  <div className="">
-                    <div className="border-slate-400 w-full r-5 border-b-2 border-solid p-2">
-                      <span className=" font-Dana-Bold flex gap-1 text-x sm:text-sm">
-                        <span className="text-green-600 ">{arrayResultBeforSearch.length}</span>
-                        <span className="text-gray-700">مورد یافت شد </span>
-                      </span>
-                    </div>
-                    {arrayResultBeforSearch.map((item) => (
-                      <div className="pt-2 pb-2">
-                        <BoxForResultSearches key={item.id} {...item} />
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div
-                    ref={wrapperDetailsSearch}
-                    className="flex flex-col gap-4 pr-2 md:pr-5 pl-2 md:pl-5"
-                  >
-                    <span className=" font-bold pt-5">جستوجو های برتر</span>
-                    <span className="bg-slate-200 w-full h-[2px] "></span>
-                    <div className="border-b-2 border-solid border-slate-200 pb-4 grid s:grid-cols-2 x:grid-cols-4 xs:grid-cols-4 md:grid-cols-5 mmd:grid-cols-7  gap-2">
-                      {papularSearchesInwebsite.map((item) => (
-                        <TopSixSearchInWebsite key={item.id} {...item} />
-                      ))}
-                    </div>
-                    <div className="flex justify-between border-b-2 border-slate-200 border-dashed pb-4">
-                      <span className="font-bold">نتیجه جستوجو</span>
-                      <span className="font-bold text-red-400">حذف</span>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
+          <SearchBoxTopBar
+            showDetailsSearch={showDetailsSearch}
+            closeModaleSearch={closeModaleSearch}
+            setIsShowLayer={setIsShowLayer}
+          />
           <div className=" md:flex hidden & > *:transition-all  & > *:border-1 & > *:border-solid & > *:border-slate-200 & > *:rounded-md & > *:p-2 gap-2 & > *:flex & > *:items-center & > *:gap-1 & > *:cursor-pointer">
             <div className="relative hover:border-red-500 hover:text-red-500">
               <div className="">
@@ -216,8 +72,6 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
                     <span className="text-xs">سبد خرید شما</span>
                   </div>
                   <div className="flex justify-center items-center h-[77%]">
-                    
-     
                     <span className="text-xs">سبد خرید شما خالی میباشد 😥</span>
                   </div>
                 </div>
@@ -229,6 +83,7 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
               >
                 <use href="#shopping-cart"></use>
               </svg>
+              <span className="absolute -top-2 -right-2 bg-red-500 p-1 font-Dana rounded-full pr-2 pl-2 text-x text-white">{cart.length}</span>
             </div>
           </div>
           <div
@@ -247,85 +102,32 @@ export default function TopBarMobile({ allPrices, arrayUserBasket }) {
           </div>
         </div>
       </div>
-      <div
-        ref={modalUserBasket}
-        className="fixed w-72 -left-80 h-[100vh] z-20 pt-3 shadow-2xl bg-white top-0 "
-      >
-        <div className="flex relative  justify-between flex-col h-full pb-2">
-          <svg
-            onClick={() => {
-              setIsShowLayerModals(false);
-              closeModalUserBasket();
-            }}
-            className="w-8 h-8 absolute left-full cursor-pointer shadow-2xl bg-zinc-800 top-0 text-slate-200 rounded-r-md "
-          >
-            <use href="#x-mark"></use>
-          </svg>
-          <div className="h-full">
-            <div className="border-b border-solid border-zinc-600 pb-4">
-              <span className="pr-2 text-xs">سبد خرید شما</span>
-            </div>
-            {cart?.length ? (
-              <div className="mt-4 h-[500px] w-full overflow-y-auto">
-                {cart
-                  ? cart.map((item) => (
-                      <BoxesForUserBaskets {...item} />
-                    ))
-                  : null}
-              </div>
-            ) : (
-              <div className="flex items-center justify-center h-[70%]">
-                <img src="./../../gif/emptyBK.gif" alt="" />
-              </div>
-            )}
-          </div>
-          {arrayUserBasket?.length ? (
-            <div className="w-[90%] m-auto flex flex-col">
-              <div className="flex justify-between pb-2">
-                <span className="font-bold text-md">قیمت کل : </span>
+      <BasketMobile
+        modalUserBasket={modalUserBasket}
+        closeModals={closeModals}
+        cart={cart}
+        setIsShowLayerModals={setIsShowLayerModals}
+        closeModalUserBasket={closeModalUserBasket}
+      />
 
-                <span className="font-bold text-md">
-                  {allPrices.toLocaleString()} تومان
-                </span>
-              </div>
-              <div className=" bg-green-600 flex justify-center  rounded-sm & > *:cursor-pointer hover:bg-green-700 transition-all cursor-pointer p-3">
-                <button className="text-white ">تسویه حساب</button>
-              </div>
-            </div>
-          ) : (
-            <div className="w-[90%] pt-2 pb-2 justify-center items-center rounded-md m-auto flex flex-col bg-slate-300">
-              <span>سبد خرید خالی است 🥱</span>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* <div className="app">
-        <h1>استوری محصولات ما</h1>
-        <InstagramStoriesModal product={preSellProducts}
-       
-        />
-      </div> */}
-      {isShowLayer ? (
+      {isShowLayer && (
         <div
-          onClick={() => {
-            closeModaleSearch();
-          }}
-          className="w-full h-full bg-black/1 fixed top-0 z-[5]"
+          onClick={closeModaleSearch}
+          className={` ${
+            isShowLayer ? "w-full h-full  bg-black/1 fixed top-0" : "w-0 h-0"
+          } `}
         ></div>
-      ) : (
-        ""
       )}
-      {isShowLayerModals ? (
+      {/* {isShowLayerModals ? (
         <div
           onClick={() => {
             closeModals();
           }}
-          className="w-full h-full bg-black/50 fixed top-0 z-[5]"
+          className="w-full h-full  bg-black/50 fixed top-0 z-[5]"
         ></div>
       ) : (
         ""
-      )}
+      )} */}
     </div>
   );
 }
