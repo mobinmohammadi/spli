@@ -7,7 +7,7 @@ export default function BoxForResultSearches({ img, price, name }) {
       <div className="flex flex-col gap-1">
         <span>{name}</span>
         <div className="flex font-bold flex-col justify-between">
-          <span>{price.toLocaleString()} تومان</span>
+          <span>{price !== null ? price.toLocaleString() : price} تومان</span>
           <span className="text-sky-600">موجود</span>
         </div>
       </div>

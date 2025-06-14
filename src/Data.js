@@ -120,6 +120,7 @@ const allProducts = [
     ],
     categury: "creatin",
     categurytext: "creatin",
+    price : 3_600_000,
     taste: [],
     info: {
       type: "پودر",
@@ -772,6 +773,7 @@ const preSellProducts = [
         img: "./../Images/Products/8-3.webp",
       },
     ],
+    price: 3_600_000,
     taste : [],
     qty : 1
 
@@ -1088,7 +1090,7 @@ const RelatedProducts = [
     price: 825_000,
     img: "./../Images/Products/5.webp",
   },
-  { id: 6, name: "کراتین مونوهیدرات ماسلتک", img: "./Images/Products/6.webp" },
+  { id: 6, name: "کراتین مونوهیدرات ماسلتک", img: "./Images/Products/6.webp" , price: 3_600_000,},
   {
     id: 7,
     name: "مس گینر",

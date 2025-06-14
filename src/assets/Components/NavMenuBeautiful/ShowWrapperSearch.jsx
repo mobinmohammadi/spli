@@ -81,7 +81,7 @@ export default function ShowWrapperSearch({ cancelActions, isShowSearchBox }) {
           {isShowLoaderSearch ? (
             <div
               ref={searchLoader}
-              className={`h-2s mt-4 rounded-md z-20  
+              className={`h-2s  mt-4 rounded-md z-20  
   bg-slate-200 h-dull ${isShowLoaderSearch ? "flex" : "hidden"}`}
             >
               <span className="loader-searchs"></span>
@@ -104,7 +104,7 @@ export default function ShowWrapperSearch({ cancelActions, isShowSearchBox }) {
                   <div className="flex flex-col gap-1">
                     <span className="text-xs font-Dana-Bold">{item.name}</span>
                     <span className="text-xs font-Dana-Bold">
-                      {item.price.toLocaleString()} تومان
+                      {(item.price ?? 0).toLocaleString()} تومان
                     </span>
                   </div>
                 </div>
