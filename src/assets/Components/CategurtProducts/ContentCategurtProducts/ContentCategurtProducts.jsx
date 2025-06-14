@@ -5,6 +5,7 @@ import { allProducts } from "../../../../Data";
 import BoxItemsColumns from "./BoxItemsColumns/BoxItemsColumns";
 export default function ContentCategurtProducts({
   isRowAndColumns,
+  setIsShowBoxCateguryByMobile,
   setIsRowAndColumns,
 }) {
   const [allDataProducts, setAllDataProducts] = useState(allProducts);
@@ -52,7 +53,12 @@ export default function ContentCategurtProducts({
     return () => clearTimeout(timer);
   }, [titleCategury]);
   return (
-    <div className="flex flex-col items-center w-full pb-5 bg-white ">
+    <div className="flex relative flex-col items-center w-full pb-5 bg-white ">
+      <div onClick={() => setIsShowBoxCateguryByMobile(true)} className="absolute cursor-pointer -top-6 right-0">
+        <svg className="w-5 h-5">
+          <use href="#bolt"></use>
+        </svg>
+      </div>
       <div className="font-Dana pr-3 pt-3 rounded-sm text-xs   w-full">
         <TopBarCateguryFilter
           isRowAndColumns={isRowAndColumns}
@@ -71,9 +77,9 @@ export default function ContentCategurtProducts({
         } grid-cols-2 transitions-custom x:grid-cols-3 sm:grid-cols-4 justify-center items-center gap-3  pr-3 pl-3`}
       >
         {isRowAndColumns == "row"
-          ? (allDataProducts.map((item) => (
+          ? allDataProducts.map((item) => (
               <BoxItemsColumns key={item.id} items={item} />
-            )))
+            ))
           : allDataProducts.map((item) => (
               <ItemSliderPreeSell key={item.id} items={item} />
             ))}
