@@ -21,7 +21,7 @@ export default function SinglePriceSlider({setFilterByRange}) {
   const filledPercent = ((price - min) / (max - min)) * 100;
 
   return (
-    <div className="bg-white p-4 flex font-Dana items-center flex-col rounded-md w-full shadow-md text-sm">
+    <div className="bg-white p-4 flex font-Dana items-center justify-center flex-col rounded-sm w-full border-gray-400 border-1 border-solid text-sm">
       <div
         onClick={() => showPriceRangeHandler()}
         className={`${isshowPriceRange ? "" : ""} font-bold flex justify-between items-center cursor-pointer w-full  text-x text-center`}

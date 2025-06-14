@@ -4,7 +4,6 @@ import ContentCategurtProducts from "./ContentCategurtProducts/ContentCategurtPr
 import RoadMapSite from "../RoadMapSite/RoadMapSite";
 import TopBarMobile from "../TopBarMobile/TopBarMobile.";
 import { useParams } from "react-router-dom";
-import MobileFilterCateguryProducts from "./MobileFilterCateguryProducts/MobileFilterCateguryProducts";
 import { allProducts } from "../../../Data";
 
 export default function CategurtProducts() {
@@ -51,16 +50,24 @@ export default function CategurtProducts() {
     }
   }
   useEffect(() => {
-    let filtred = allProducts.filter(item => item.name.includes(valueSearchInCateguryPage) && item.price >= filterByRange)
-    setArrayAllProducts(filtred)
-  },[filterByRange , valueSearchInCateguryPage])
+    let filtred = allProducts.filter(
+      (item) =>
+        item.name.includes(valueSearchInCateguryPage) &&
+        item.price >= filterByRange
+    );
+    setArrayAllProducts(filtred);
+  }, [filterByRange, valueSearchInCateguryPage]);
   return (
     <div className="flex pb-10">
       <div className="mt-30 w-full ">
         <RoadMapSite categury="دسته بندی ها" name={title} />
         <div className="container-custom">
           <div className="flex gap-5 mt-10 ">
-            <div className="md:flex hidden">
+            <div
+              className={`fixed ${
+                isShowBoxCateguryByMobile ? "opacity-100 z-30" : "opacity-0"
+              } sm:opacity-100  sm:static z-10 flex bg-white sm:bg-slate-100 sm:bg-auto sm:top-auto top-[30%] rounded-sm sm:rounded-none shadow-2xl sm:shadow-none border-slate-300 border-solid sm:border-0 border-2  w-[96%] sm:w-auto`}
+            >
               <FilterCategurtProducts
                 setFilterByRange={setFilterByRange}
                 setValueSearchInCateguryPage={setValueSearchInCateguryPage}
@@ -79,13 +86,7 @@ export default function CategurtProducts() {
       </div>
       <div className="">
         {isShowBoxCateguryByMobile && (
-          <>
-            <MobileFilterCateguryProducts
-              isShowBoxCateguryByMobile={isShowBoxCateguryByMobile}
-              setIsShowBoxCateguryByMobile={setIsShowBoxCateguryByMobile}
-            />
-            <div className="bg-black/20 fixed top-0 right-0 w-full h-full z-20"></div>
-          </>
+          <div onClick={() => setIsShowBoxCateguryByMobile(false)} className="bg-black/20 fixed top-0 right-0 w-full h-full z-20"></div>
         )}
       </div>
     </div>

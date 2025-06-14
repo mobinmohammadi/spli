@@ -10,7 +10,7 @@ export default function FilterCategurtProducts({setValueSearchInCateguryPage , s
   }
 
   return (
-    <div className=" w-56 flex gap-2 flex-col h-[70vh] text-gray-800 ">
+    <div className=" w-full sm:w-52 flex gap-2 flex-col-reverse sm:flex-col  sm:h-[70vh] text-gray-800 ">
       <div className="flex bg-white pt-5 pb-5 rounded-sm gap-2 items-center justify-center">
         <div
           onClick={() => {
